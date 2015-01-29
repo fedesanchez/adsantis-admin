@@ -17,7 +17,7 @@ require_once("util/password.php");
  * @author ClassBuilder
  * @version 1.0
  */
-class ExampleUser implements IAuthenticatable
+class User implements IAuthenticatable
 {
 	/**
 	 * @var Array hard-coded list user/passwords.  initialized on contruction
@@ -52,6 +52,11 @@ class ExampleUser implements IAuthenticatable
 	public function IsAnonymous()
 	{
 		return $this->Username == '';
+	}
+
+	public function EstaConectado()
+	{
+		return $this->Username !== '';
 	}
 	
 	/**
@@ -93,6 +98,8 @@ class ExampleUser implements IAuthenticatable
 		
 		return $this->Username != '';
 	}
+
+	
 	
 }
 

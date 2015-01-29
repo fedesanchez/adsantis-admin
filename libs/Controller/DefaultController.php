@@ -32,7 +32,18 @@ class DefaultController extends AppBaseController
 	 */
 	public function Home()
 	{
-		$this->Render();
+		if($this->GetCurrentUser())
+		{
+			error_log("entro a home");
+			error_log($this->GetCurrentUser()->Username);
+			$this->Assign("currentUser", $this->GetCurrentUser());
+			$this->Render('Home');
+		}else{
+			error_log("entro a login");
+			$this->Render('Login');	
+		}
+		
+		
 	}
 
 	/**

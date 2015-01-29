@@ -51,7 +51,7 @@ set_include_path(
  * Any classes that will be stored in the session can be added here
  * and will be pre-loaded on every page
  */
-require_once "App/ExampleUser.php";
+require_once "App/User.php";
 
 /**
  * RENDER ENGINE
@@ -75,11 +75,11 @@ GlobalConfig::$ROUTE_MAP = array(
 	'GET:' => array('route' => 'Default.Home'),
 		
 	// example authentication routes
-	'GET:loginform' => array('route' => 'SecureExample.LoginForm'),
-	'POST:login' => array('route' => 'SecureExample.Login'),
-	'GET:secureuser' => array('route' => 'SecureExample.UserPage'),
-	'GET:secureadmin' => array('route' => 'SecureExample.AdminPage'),
-	'GET:logout' => array('route' => 'SecureExample.Logout'),
+	'GET:loginform' => array('route' => 'Default.Home'),
+	'POST:login' => array('route' => 'Secure.Login'),
+	'GET:secureuser' => array('route' => 'Secure.UserPage'),
+	'GET:secureadmin' => array('route' => 'Secure.AdminPage'),
+	'GET:logout' => array('route' => 'Secure.Logout'),
 		
 	// Categoria
 	'GET:categorias' => array('route' => 'Categoria.ListView'),
