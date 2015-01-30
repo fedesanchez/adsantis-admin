@@ -36,6 +36,18 @@ class LineaDAO extends Phreezable
 	/** @var string */
 	public $Atributos;
 
+	/** @var string */
+	public $Nombre;
+
+
+	/**
+	 * Returns the foreign object based on the value of IdCategoria
+	 * @return Categoria
+	 */
+	public function GetIdCategoria()
+	{
+		return $this->_phreezer->GetManyToOne($this, "fk_linea_1");
+	}
 
 
 }

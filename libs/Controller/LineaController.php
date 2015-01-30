@@ -1,5 +1,5 @@
 <?php
-/** @package    Anna De Santis::Controller */
+/** @package    SANTIS::Controller */
 
 /** import supporting libraries */
 require_once("AppBaseController.php");
@@ -10,7 +10,7 @@ require_once("Model/Linea.php");
  * controller is responsible for processing input from the user, reading/updating
  * the model as necessary and displaying the appropriate view.
  *
- * @package Anna De Santis::Controller
+ * @package SANTIS::Controller
  * @author ClassBuilder
  * @version 1.0
  */
@@ -58,7 +58,7 @@ class LineaController extends AppBaseController
 			// TODO: this will limit results based on all properties included in the filter list 
 			$filter = RequestUtil::Get('filter');
 			if ($filter) $criteria->AddFilter(
-				new CriteriaFilter('IdLinea,IdCategoria,Img,Descripcion,Atributos'
+				new CriteriaFilter('IdLinea,IdCategoria,Img,Descripcion,Atributos,Nombre'
 				, '%'.$filter.'%')
 			);
 
@@ -161,6 +161,7 @@ class LineaController extends AppBaseController
 			$linea->Img = $this->SafeGetVal($json, 'img');
 			$linea->Descripcion = $this->SafeGetVal($json, 'descripcion');
 			$linea->Atributos = $this->SafeGetVal($json, 'atributos');
+			$linea->Nombre = $this->SafeGetVal($json, 'nombre');
 
 			$linea->Validate();
 			$errors = $linea->GetValidationErrors();
@@ -210,6 +211,7 @@ class LineaController extends AppBaseController
 			$linea->Img = $this->SafeGetVal($json, 'img', $linea->Img);
 			$linea->Descripcion = $this->SafeGetVal($json, 'descripcion', $linea->Descripcion);
 			$linea->Atributos = $this->SafeGetVal($json, 'atributos', $linea->Atributos);
+			$linea->Nombre = $this->SafeGetVal($json, 'nombre', $linea->Nombre);
 
 			$linea->Validate();
 			$errors = $linea->GetValidationErrors();

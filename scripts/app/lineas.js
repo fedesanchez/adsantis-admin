@@ -223,6 +223,32 @@ var page = {
 		
 		$('.timepicker-default').timepicker({ defaultTime: 'value' });
 
+		// populate the dropdown options for idCategoria
+		// TODO: load only the selected value, then fetch all options when the drop-down is clicked
+		var idCategoriaValues = new model.CategoriaCollection();
+		idCategoriaValues.fetch({
+			success: function(c){
+				var dd = $('#idCategoria');
+				dd.append('<option value=""></option>');
+				c.forEach(function(item,index) {
+					dd.append(app.getOptionHtml(
+						item.get('idCategoria'),
+						item.get('nombre'), // TODO: change fieldname if the dropdown doesn't show the desired column
+						page.linea.get('idCategoria') == item.get('idCategoria')
+					));
+				});
+				
+				if (!app.browserSucks()) {
+					dd.combobox();
+					$('div.combobox-container + span.help-inline').hide(); // TODO: hack because combobox is making the inline help div have a height
+				}
+
+			},
+			error: function(collection,response,scope) {
+				app.appendAlert(app.getErrorMessage(response), 'alert-error',0,'modelAlert');
+			}
+		});
+
 
 		if (showDeleteButton) {
 			// attach click handlers to the delete buttons
@@ -264,10 +290,11 @@ var page = {
 
 		page.linea.save({
 			'idLinea': $('input#idLinea').val(),
-			'idCategoria': $('input#idCategoria').val(),
+			'idCategoria': $('select#idCategoria').val(),
 			'img': $('input#img').val(),
 			'descripcion': $('textarea#descripcion').val(),
-			'atributos': $('textarea#atributos').val()
+			'atributos': $('textarea#atributos').val(),
+			'nombre': $('input#nombre').val()
 		}, {
 			wait: true,
 			success: function(){

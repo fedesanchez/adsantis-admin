@@ -96,6 +96,21 @@ class LineaCriteriaDAO extends Criteria
 	public $Atributos_IsEmpty;
 	public $Atributos_BitwiseOr;
 	public $Atributos_BitwiseAnd;
+	public $Nombre_Equals;
+	public $Nombre_NotEquals;
+	public $Nombre_IsLike;
+	public $Nombre_IsNotLike;
+	public $Nombre_BeginsWith;
+	public $Nombre_EndsWith;
+	public $Nombre_GreaterThan;
+	public $Nombre_GreaterThanOrEqual;
+	public $Nombre_LessThan;
+	public $Nombre_LessThanOrEqual;
+	public $Nombre_In;
+	public $Nombre_IsNotEmpty;
+	public $Nombre_IsEmpty;
+	public $Nombre_BitwiseOr;
+	public $Nombre_BitwiseAnd;
 
 }
 

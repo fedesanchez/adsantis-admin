@@ -1,5 +1,5 @@
 /**
- * backbone model definitions for Anna De Santis
+ * backbone model definitions for SANTIS
  */
 
 /**
@@ -189,12 +189,14 @@ model.LineaModel = Backbone.Model.extend({
 	img: '',
 	descripcion: '',
 	atributos: '',
+	nombre: '',
 	defaults: {
 		'idLinea': null,
 		'idCategoria': '',
 		'img': '',
 		'descripcion': '',
-		'atributos': ''
+		'atributos': '',
+		'nombre': ''
 	}
 });
 

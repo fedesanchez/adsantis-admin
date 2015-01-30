@@ -1,5 +1,5 @@
 <?php
-	$this->assign('title','Anna De Santis | Lineas');
+	$this->assign('title','SANTIS | Lineas');
 	$this->assign('nav','lineas');
 
 	$this->display('_Header.tpl.php');
@@ -35,20 +35,28 @@
 		<thead>
 			<tr>
 				<th id="header_IdLinea">Id Linea<% if (page.orderBy == 'IdLinea') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_Nombre">Nombre<% if (page.orderBy == 'Nombre') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_IdCategoria">Id Categoria<% if (page.orderBy == 'IdCategoria') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Img">Img<% if (page.orderBy == 'Img') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Descripcion">Descripcion<% if (page.orderBy == 'Descripcion') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Atributos">Atributos<% if (page.orderBy == 'Atributos') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+<!-- UNCOMMENT TO SHOW ADDITIONAL COLUMNS
+				
+-->
 			</tr>
 		</thead>
 		<tbody>
 		<% items.each(function(item) { %>
 			<tr id="<%= _.escape(item.get('idLinea')) %>">
+			    <td><%= _.escape(item.get('nombre') || '') %></td>
 				<td><%= _.escape(item.get('idLinea') || '') %></td>
 				<td><%= _.escape(item.get('idCategoria') || '') %></td>
 				<td><%= _.escape(item.get('img') || '') %></td>
 				<td><%= _.escape(item.get('descripcion') || '') %></td>
 				<td><%= _.escape(item.get('atributos') || '') %></td>
+<!-- UNCOMMENT TO SHOW ADDITIONAL COLUMNS
+				
+-->
 			</tr>
 		<% }); %>
 		</tbody>
@@ -68,10 +76,17 @@
 						<span class="help-inline"></span>
 					</div>
 				</div>
-				<div id="idCategoriaInputContainer" class="control-group">
-					<label class="control-label" for="idCategoria">Id Categoria</label>
+				<div id="nombreInputContainer" class="control-group">
+					<label class="control-label" for="nombre">Nombre</label>
 					<div class="controls inline-inputs">
-						<input type="text" class="input-xlarge" id="idCategoria" placeholder="Id Categoria" value="<%= _.escape(item.get('idCategoria') || '') %>">
+						<input type="text" class="input-xlarge" id="nombre" placeholder="Nombre" value="<%= _.escape(item.get('nombre') || '') %>">
+						<span class="help-inline"></span>
+					</div>
+				</div>
+				<div id="idCategoriaInputContainer" class="control-group">
+					<label class="control-label" for="idCategoria">Categoria</label>
+					<div class="controls inline-inputs">
+						<select id="idCategoria" name="idCategoria"></select>
 						<span class="help-inline"></span>
 					</div>
 				</div>
@@ -96,6 +111,7 @@
 						<span class="help-inline"></span>
 					</div>
 				</div>
+				
 			</fieldset>
 		</form>
 

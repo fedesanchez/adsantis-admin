@@ -28,6 +28,16 @@ class CategoriaDAO extends Phreezable
 	public $Nombre;
 
 
+	/**
+	 * Returns a dataset of Linea objects with matching IdCategoria
+	 * @param Criteria
+	 * @return DataSet
+	 */
+	public function GetIdLineas($criteria = null)
+	{
+		return $this->_phreezer->GetOneToMany($this, "fk_linea_1", $criteria);
+	}
+
 
 }
 ?>
