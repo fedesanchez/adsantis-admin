@@ -17,7 +17,7 @@
 		},1000);
 	});
 </script>
-
+<div id="page-wrapper">
 <div class="container">
 
 <h1>
@@ -118,7 +118,7 @@
 	</p>
 
 </div> <!-- /container -->
-
+</div>
 <?php
 	$this->display('_Footer.tpl.php');
 ?>
