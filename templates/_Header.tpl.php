@@ -25,7 +25,7 @@
 		<link href="bootstrap/css/timepicker.css" rel="stylesheet" />
 		<link href="bootstrap/css/bootstrap-combobox.css" rel="stylesheet" />
 		<link href="bootstrap/css/styles.css" rel="stylesheet" />
-		
+		<link rel="stylesheet" href="upload/jquery.fileupload.css">
 		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
 			<script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -39,7 +39,8 @@
 
 		<script type="text/javascript" src="scripts/libs/LAB.min.js"></script>
 		<script type="text/javascript">
-			$LAB.script("//code.jquery.com/jquery-1.8.2.min.js").wait()
+			$LAB.script("scripts/libs/jquery-1.11.1.min.js").wait()
+				.script("scripts/libs/jquery.ui.widget.js").wait()
 				.script("bootstrap/js/bootstrap.min.js")
 				.script("bootstrap/js/bootstrap-datepicker.js")
 				.script("bootstrap/js/bootstrap-timepicker.js")
@@ -50,9 +51,12 @@
 				.script("scripts/app.js")
 				.script("scripts/model.js").wait()
 				.script("scripts/view.js").wait()
-				.script("bootstrap/js/jasny-bootstrap.min.js").wait()
-
+				.script("upload/jquery.fileupload.js").wait()				
+				.script("upload/handler.js").wait()
 		</script>
+
+        <!-- The basic File Upload plugin -->
+        
 		
 	</head>
 
@@ -101,9 +105,7 @@
                     <li  <?php if ($this->nav=='estadisticas') { echo 'class="active"'; } ?>>
                         <a href="./estadisticas"><i class="fa fa-fw fa-table"></i> Estadisticas</a>
                     </li>
-                    <li  <?php if ($this->nav=='archivos') { echo 'class="active"'; } ?>>
-                    	<a href="#" onclick="$('#media-manager').modal();">Archivos</a>           
-                    </li>
+                   
                     <li  <?php if ($this->nav=='categorias') { echo 'class="active"'; } ?>>
                         <a href="./categorias"><i class="fa fa-fw fa-bar-chart-o"></i>Categorias</a>
                     </li>
@@ -130,34 +132,4 @@
 			
 
    
-       <div class="modal hide fade" id="media-manager">
-       	<div class="modal-header">
-			<a class="close" data-dismiss="modal">&times;</a>
-			<h3>
-				<i class="icon-edit"></i> Media
-				<span id="modelLoader" class="loader progress progress-striped active"><span class="bar"></span></span>
-			</h3>
-		</div>
-		<div class="modal-body">
-			<iframe src="media/filemanager/dialog.php?type=0" width="765" height="550"></iframe>
-		</div>
-		<div class="modal-footer">
-			<button class="btn" data-dismiss="modal" >Cancelar</button>
-		</div>       		
-       </div>
-
-       <div class="modal hide fade" id="select-image">
-       	<div class="modal-header">
-			<a class="close" data-dismiss="modal">&times;</a>
-			<h3>
-				<i class="icon-edit"></i> Seleccionar
-				<span id="modelLoader" class="loader progress progress-striped active"><span class="bar"></span></span>
-			</h3>
-		</div>
-		<div class="modal-body">
-			<iframe src="media/filemanager/dialog.php?type=1&field_id=img" width="765" height="550" frameborder="0"></iframe>
-		</div>
-		<div class="modal-footer">
-			<button class="btn" data-dismiss="modal" >Cancelar</button>
-		</div>       		
-       </div>
+       

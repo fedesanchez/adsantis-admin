@@ -96,12 +96,25 @@
 						<input type="text" class="input-xlarge" id="img" placeholder="Img" value="<%= _.escape(item.get('img') || '') %>">
 						<span class="help-inline"></span>
 
-
-						<div class="fileupload fileupload-new" data-provides="fileupload">
-						  <div class="input-append">
-						    <div class="uneditable-input span3"><i class="icon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div><span class="btn btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file" /></span><a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
-						  </div>
-						</div>
+						<div class="container">
+   
+		                    <span class="btn btn-success fileinput-button">
+		                        <i class="icon-plus"></i>
+		                        <span>Adjuntar...</span>
+		                        <!-- The file input field used as target for the file upload widget -->
+		                        <input id="fileupload" type="file" name="files[]" multiple>
+		                    </span>
+		                    <br>
+		                    <br>
+		                    <!-- The global progress bar -->
+		                    <div id="progress" class="progress">
+		                        <div class="progress-bar progress-bar-success"></div>
+		                    </div>
+		                    <!-- The container for the uploaded files -->
+		                    <div id="files" class="files"></div>
+                    		<br>
+                		</div>
+						
 
 					</div>
 				</div>
@@ -122,6 +135,7 @@
 				
 			</fieldset>
 		</form>
+	
 
 		<!-- delete button is is a separate form to prevent enter key from triggering a delete -->
 		<form id="deleteLineaButtonContainer" class="form-horizontal" onsubmit="return false;">
@@ -169,6 +183,8 @@
 	</p>
 
 </div> <!-- /container -->
+
+
 
 <?php
 	$this->display('_Footer.tpl.php');
