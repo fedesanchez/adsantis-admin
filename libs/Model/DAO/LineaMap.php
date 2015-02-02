@@ -51,7 +51,7 @@ class LineaMap implements IDaoMap, IDaoMap2
 		if (self::$FM == null)
 		{
 			self::$FM = Array();
-			self::$FM["IdLinea"] = new FieldMap("IdLinea","linea","id_linea",true,FM_TYPE_INT,11,null,false);
+			self::$FM["IdLinea"] = new FieldMap("IdLinea","linea","id_linea",true,FM_TYPE_INT,11,null,true);
 			self::$FM["IdCategoria"] = new FieldMap("IdCategoria","linea","id_categoria",false,FM_TYPE_INT,11,null,false);
 			self::$FM["Img"] = new FieldMap("Img","linea","img",false,FM_TYPE_VARCHAR,255,null,false);
 			self::$FM["Descripcion"] = new FieldMap("Descripcion","linea","descripcion",false,FM_TYPE_TEXT,null,null,false);
@@ -69,7 +69,6 @@ class LineaMap implements IDaoMap, IDaoMap2
 		if (self::$KM == null)
 		{
 			self::$KM = Array();
-			self::$KM["fk_linea_1"] = new KeyMap("fk_linea_1", "IdCategoria", "Categoria", "IdCategoria", KM_TYPE_MANYTOONE, KM_LOAD_LAZY); // you change to KM_LOAD_EAGER here or (preferrably) make the change in _config.php
 		}
 		return self::$KM;
 	}

@@ -65,7 +65,6 @@ class CategoriaMap implements IDaoMap, IDaoMap2
 		if (self::$KM == null)
 		{
 			self::$KM = Array();
-			self::$KM["fk_linea_1"] = new KeyMap("fk_linea_1", "IdCategoria", "Linea", "IdCategoria", KM_TYPE_ONETOMANY, KM_LOAD_LAZY);  // use KM_LOAD_EAGER with caution here (one-to-one relationships only)
 		}
 		return self::$KM;
 	}

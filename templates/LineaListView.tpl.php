@@ -95,6 +95,14 @@
 					<div class="controls inline-inputs">
 						<input type="text" class="input-xlarge" id="img" placeholder="Img" value="<%= _.escape(item.get('img') || '') %>">
 						<span class="help-inline"></span>
+
+
+						<div class="fileupload fileupload-new" data-provides="fileupload">
+						  <div class="input-append">
+						    <div class="uneditable-input span3"><i class="icon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div><span class="btn btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file" /></span><a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+						  </div>
+						</div>
+
 					</div>
 				</div>
 				<div id="descripcionInputContainer" class="control-group">

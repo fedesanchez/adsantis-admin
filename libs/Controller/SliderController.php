@@ -37,7 +37,13 @@ class SliderController extends AppBaseController
 	 */
 	public function ListView()
 	{
-		$this->Render();
+		if($this->GetCurrentUser())
+		{						
+			$this->Assign("currentUser", $this->GetCurrentUser());
+			$this->Render();
+		}else{			
+			$this->Render('Login');	
+		}
 	}
 
 	/**

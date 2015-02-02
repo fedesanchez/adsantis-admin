@@ -13,7 +13,8 @@
 
 		
 		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-		
+		<link href="bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet" />
+
 		<link href="styles/style.css" rel="stylesheet" />
 		<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
 		<link href="bootstrap/css/font-awesome.min.css" rel="stylesheet" />
@@ -24,6 +25,7 @@
 		<link href="bootstrap/css/timepicker.css" rel="stylesheet" />
 		<link href="bootstrap/css/bootstrap-combobox.css" rel="stylesheet" />
 		<link href="bootstrap/css/styles.css" rel="stylesheet" />
+		
 		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
 			<script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -48,8 +50,10 @@
 				.script("scripts/app.js")
 				.script("scripts/model.js").wait()
 				.script("scripts/view.js").wait()
-		</script>
+				.script("bootstrap/js/jasny-bootstrap.min.js").wait()
 
+		</script>
+		
 	</head>
 
 	<body>
@@ -94,6 +98,12 @@
                         <li  <?php if ($this->nav=='inicio') { echo 'class="active"'; } ?>>
                         <a href="./"><i class="fa fa-fw fa-dashboard"></i> Inicio</a>
                     </li>
+                    <li  <?php if ($this->nav=='estadisticas') { echo 'class="active"'; } ?>>
+                        <a href="./estadisticas"><i class="fa fa-fw fa-table"></i> Estadisticas</a>
+                    </li>
+                    <li  <?php if ($this->nav=='archivos') { echo 'class="active"'; } ?>>
+                    	<a href="#" onclick="$('#media-manager').modal();">Archivos</a>           
+                    </li>
                     <li  <?php if ($this->nav=='categorias') { echo 'class="active"'; } ?>>
                         <a href="./categorias"><i class="fa fa-fw fa-bar-chart-o"></i>Categorias</a>
                     </li>
@@ -105,7 +115,7 @@
                         <a href="./sliders"><i class="fa fa-fw fa-desktop"></i> Slider Principal</a>
                     </li>
                     <li  <?php if ($this->nav=='slidersta') { echo 'class="active"'; } ?>>
-                        <a href="./slidersta"><i class="fa fa-fw fa-wrench"></i> Slider Triple Accion</a>
+                        <a href="./slidertas"><i class="fa fa-fw fa-wrench"></i> Slider Triple Accion</a>
                     </li>
                     
                     <li  <?php if ($this->nav=='testimonios') { echo 'class="active"'; } ?>>
@@ -114,9 +124,40 @@
                     <li  <?php if ($this->nav=='consejos') { echo 'class="active"'; } ?>>
                         <a href="./consejos"><i class="fa fa-fw fa-table"></i> Consejos</a>
                     </li>
+                    
                     </ul>
                 </div>
 			
 
    
-       
+       <div class="modal hide fade" id="media-manager">
+       	<div class="modal-header">
+			<a class="close" data-dismiss="modal">&times;</a>
+			<h3>
+				<i class="icon-edit"></i> Media
+				<span id="modelLoader" class="loader progress progress-striped active"><span class="bar"></span></span>
+			</h3>
+		</div>
+		<div class="modal-body">
+			<iframe src="media/filemanager/dialog.php?type=0" width="765" height="550"></iframe>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" >Cancelar</button>
+		</div>       		
+       </div>
+
+       <div class="modal hide fade" id="select-image">
+       	<div class="modal-header">
+			<a class="close" data-dismiss="modal">&times;</a>
+			<h3>
+				<i class="icon-edit"></i> Seleccionar
+				<span id="modelLoader" class="loader progress progress-striped active"><span class="bar"></span></span>
+			</h3>
+		</div>
+		<div class="modal-body">
+			<iframe src="media/filemanager/dialog.php?type=1&field_id=img" width="765" height="550" frameborder="0"></iframe>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" >Cancelar</button>
+		</div>       		
+       </div>
