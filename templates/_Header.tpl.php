@@ -100,31 +100,31 @@
 			 <div class="span3" id="sidebar">
                     <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
                         <li  <?php if ($this->nav=='inicio') { echo 'class="active"'; } ?>>
-                        <a href="./"><i class="fa fa-fw fa-dashboard"></i> Inicio</a>
+                        <a href="./"><i class="icon-chevron-right"></i> Inicio</a>
                     </li>
                     <li  <?php if ($this->nav=='estadisticas') { echo 'class="active"'; } ?>>
-                        <a href="./estadisticas"><i class="fa fa-fw fa-table"></i> Estadisticas</a>
+                        <a href="./estadisticas"><i class="icon-chevron-right"></i> Estadisticas</a>
                     </li>
                    
                     <li  <?php if ($this->nav=='categorias') { echo 'class="active"'; } ?>>
-                        <a href="./categorias"><i class="fa fa-fw fa-bar-chart-o"></i>Categorias</a>
+                        <a href="./categorias"><i class="icon-chevron-right"></i>Categorias</a>
                     </li>
                     <li  <?php if ($this->nav=='lineas') { echo 'class="active"'; } ?>>
-                    	<a href="./lineas"><i class="fa fa-fw fa-edit"></i> Lineas</a>                    
+                    	<a href="./lineas"><i class="icon-chevron-right"></i> Lineas</a>                    
                     </li>
                     
                     <li <?php if ($this->nav=='sliders') { echo 'class="active"'; } ?>>
-                        <a href="./sliders"><i class="fa fa-fw fa-desktop"></i> Slider Principal</a>
+                        <a href="./sliders"><i class="icon-chevron-right"></i> Slider Principal</a>
                     </li>
                     <li  <?php if ($this->nav=='slidersta') { echo 'class="active"'; } ?>>
-                        <a href="./slidertas"><i class="fa fa-fw fa-wrench"></i> Slider Triple Accion</a>
+                        <a href="./slidertas"><i class="icon-chevron-right"></i> Slider Triple Accion</a>
                     </li>
                     
                     <li  <?php if ($this->nav=='testimonios') { echo 'class="active"'; } ?>>
-                        <a href="./testimonios"><i class="fa fa-fw fa-file"></i> Testimonios</a>
+                        <a href="./testimonios"><i class="icon-chevron-right"></i> Testimonios</a>
                     </li>
                     <li  <?php if ($this->nav=='consejos') { echo 'class="active"'; } ?>>
-                        <a href="./consejos"><i class="fa fa-fw fa-table"></i> Consejos</a>
+                        <a href="./consejos"><i class="icon-chevron-right"></i> Consejos</a>
                     </li>
                     
                     </ul>

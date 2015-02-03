@@ -91,12 +91,12 @@
 					</div>
 				</div>
 				<div id="imgInputContainer" class="control-group">
-					<label class="control-label" for="img">Img</label>
+					<label class="control-label" for="img">Imagen</label>
 					<div class="controls inline-inputs">
-						<input type="text" class="input-xlarge" id="img" placeholder="Img" value="<%= _.escape(item.get('img') || '') %>">
+						<input type="text" class="input-xlarge" id="img" placeholder="Img" value="<%= _.escape(item.get('img') || '') %>" disabled>
 						<span class="help-inline"></span>
 
-						<div class="container">
+						<div class="">
    
 		                    <span class="btn btn-success fileinput-button">
 		                        <i class="icon-plus"></i>
@@ -108,7 +108,7 @@
 		                    <br>
 		                    <!-- The global progress bar -->
 		                    <div id="progress" class="progress">
-		                        <div class="progress-bar progress-bar-success"></div>
+		                        <div class="bar progress-bar-success"></div>
 		                    </div>
 		                    <!-- The container for the uploaded files -->
 		                    <div id="files" class="files"></div>

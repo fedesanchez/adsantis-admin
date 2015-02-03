@@ -35,31 +35,33 @@
 		<thead>
 			<tr>
 				<th id="header_IdSlider">Id Slider<% if (page.orderBy == 'IdSlider') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-				<th id="header_ImgFondo">Img Fondo<% if (page.orderBy == 'ImgFondo') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-				<th id="header_ImgProducto">Img Producto<% if (page.orderBy == 'ImgProducto') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_NombreProducto">Nombre Producto<% if (page.orderBy == 'NombreProducto') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_DescSupProd">Desc Sup Prod<% if (page.orderBy == 'DescSupProd') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-<!-- UNCOMMENT TO SHOW ADDITIONAL COLUMNS
-				<th id="header_DescInfProd">Desc Inf Prod<% if (page.orderBy == 'DescInfProd') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-				<th id="header_Link">Link<% if (page.orderBy == 'Link') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Orden">Orden<% if (page.orderBy == 'Orden') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Habilitado">Habilitado<% if (page.orderBy == 'Habilitado') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+<!-- UNCOMMENT TO SHOW ADDITIONAL COLUMNS
+				<th id="header_ImgFondo">Img Fondo<% if (page.orderBy == 'ImgFondo') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_ImgProducto">Img Producto<% if (page.orderBy == 'ImgProducto') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>				
+				<th id="header_DescInfProd">Desc Inf Prod<% if (page.orderBy == 'DescInfProd') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_Link">Link<% if (page.orderBy == 'Link') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				
 -->
 			</tr>
 		</thead>
 		<tbody>
 		<% items.each(function(item) { %>
 			<tr id="<%= _.escape(item.get('idSlider')) %>">
-				<td><%= _.escape(item.get('idSlider') || '') %></td>
-				<td><%= _.escape(item.get('imgFondo') || '') %></td>
-				<td><%= _.escape(item.get('imgProducto') || '') %></td>
+				<td><%= _.escape(item.get('idSlider') || '') %></td>				
 				<td><%= _.escape(item.get('nombreProducto') || '') %></td>
 				<td><%= _.escape(item.get('descSupProd') || '') %></td>
-<!-- UNCOMMENT TO SHOW ADDITIONAL COLUMNS
-				<td><%= _.escape(item.get('descInfProd') || '') %></td>
-				<td><%= _.escape(item.get('link') || '') %></td>
 				<td><%= _.escape(item.get('orden') || '') %></td>
 				<td><%= _.escape(item.get('habilitado') || '') %></td>
+<!-- UNCOMMENT TO SHOW ADDITIONAL COLUMNS
+				<td><%= _.escape(item.get('imgFondo') || '') %></td>
+				<td><%= _.escape(item.get('imgProducto') || '') %></td>
+				<td><%= _.escape(item.get('descInfProd') || '') %></td>
+				<td><%= _.escape(item.get('link') || '') %></td>
+				
 -->
 			</tr>
 		<% }); %>
@@ -74,23 +76,9 @@
 		<form class="form-horizontal" onsubmit="return false;">
 			<fieldset>
 				<div id="idSliderInputContainer" class="control-group">
-					<label class="control-label" for="idSlider">Id Slider</label>
+					<label class="control-label" for="idSlider">Id</label>
 					<div class="controls inline-inputs">
 						<span class="input-xlarge uneditable-input" id="idSlider"><%= _.escape(item.get('idSlider') || '') %></span>
-						<span class="help-inline"></span>
-					</div>
-				</div>
-				<div id="imgFondoInputContainer" class="control-group">
-					<label class="control-label" for="imgFondo">Img Fondo</label>
-					<div class="controls inline-inputs">
-						<input type="text" class="input-xlarge" id="imgFondo" placeholder="Img Fondo" value="<%= _.escape(item.get('imgFondo') || '') %>">
-						<span class="help-inline"></span>
-					</div>
-				</div>
-				<div id="imgProductoInputContainer" class="control-group">
-					<label class="control-label" for="imgProducto">Img Producto</label>
-					<div class="controls inline-inputs">
-						<input type="text" class="input-xlarge" id="imgProducto" placeholder="Img Producto" value="<%= _.escape(item.get('imgProducto') || '') %>">
 						<span class="help-inline"></span>
 					</div>
 				</div>
@@ -101,17 +89,68 @@
 						<span class="help-inline"></span>
 					</div>
 				</div>
-				<div id="descSupProdInputContainer" class="control-group">
-					<label class="control-label" for="descSupProd">Desc Sup Prod</label>
+				<div id="imgFondoInputContainer" class="control-group">
+					<label class="control-label" for="imgFondo">Imagen de Fondo</label>
 					<div class="controls inline-inputs">
-						<input type="text" class="input-xlarge" id="descSupProd" placeholder="Desc Sup Prod" value="<%= _.escape(item.get('descSupProd') || '') %>">
+						<input type="text" class="input-xlarge" id="imgFondo" placeholder="Seleccionar imagen" value="<%= _.escape(item.get('imgFondo') || '') %>" disabled>
+						<span class="help-inline"></span>
+
+						<div>
+		                    <span class="btn btn-success fileinput-button">
+		                        <i class="icon-plus"></i>
+		                        <span>Adjuntar...</span>
+		                        <!-- The file input field used as target for the file upload widget -->
+		                        <input id="fileupload-slider-fondo" type="file" name="files[]" multiple>
+		                    </span>
+		                    <br>
+		                    <br>
+		                    <!-- The global progress bar -->
+		                    <div id="progress" class="progress">
+		                        <div class="bar progress-bar-success"></div>
+		                    </div>
+		                    <!-- The container for the uploaded files -->
+		                    <div id="files" class="files"></div>
+                    		<br>
+                		</div>
+
+					</div>
+				</div>
+				<div id="imgProductoInputContainer" class="control-group">
+					<label class="control-label" for="imgProducto">Imagen del Producto</label>
+					<div class="controls inline-inputs">
+						<input type="text" class="input-xlarge" id="imgProducto" placeholder="Seleccionar imagen" value="<%= _.escape(item.get('imgProducto') || '') %>" disabled>
+						<span class="help-inline"></span>
+						<div>
+		                    <span class="btn btn-success fileinput-button">
+		                        <i class="icon-plus"></i>
+		                        <span>Adjuntar...</span>
+		                        <!-- The file input field used as target for the file upload widget -->
+		                        <input id="fileupload-slider-prod" type="file" name="files[]" multiple>
+		                    </span>
+		                    <br>
+		                    <br>
+		                    <!-- The global progress bar -->
+		                    <div id="progress" class="progress">
+		                        <div class="bar progress-bar-success"></div>
+		                    </div>
+		                    <!-- The container for the uploaded files -->
+		                    <div id="files" class="files"></div>
+                    		<br>
+                		</div>
+					</div>
+				</div>
+				
+				<div id="descSupProdInputContainer" class="control-group">
+					<label class="control-label" for="descSupProd">Descripción Superior</label>
+					<div class="controls inline-inputs">
+						<input type="text" class="input-xlarge" id="descSupProd" placeholder="Descripción ..." value="<%= _.escape(item.get('descSupProd') || '') %>">
 						<span class="help-inline"></span>
 					</div>
 				</div>
 				<div id="descInfProdInputContainer" class="control-group">
-					<label class="control-label" for="descInfProd">Desc Inf Prod</label>
+					<label class="control-label" for="descInfProd">Descripcion Inferior</label>
 					<div class="controls inline-inputs">
-						<input type="text" class="input-xlarge" id="descInfProd" placeholder="Desc Inf Prod" value="<%= _.escape(item.get('descInfProd') || '') %>">
+						<input type="text" class="input-xlarge" id="descInfProd" placeholder="Descripción ..." value="<%= _.escape(item.get('descInfProd') || '') %>">
 						<span class="help-inline"></span>
 					</div>
 				</div>
@@ -132,7 +171,7 @@
 				<div id="habilitadoInputContainer" class="control-group">
 					<label class="control-label" for="habilitado">Habilitado</label>
 					<div class="controls inline-inputs">
-						<input type="text" class="input-xlarge" id="habilitado" placeholder="Habilitado" value="<%= _.escape(item.get('habilitado') || '') %>">
+						<input type="checkbox" class="input-xlarge" id="habilitado" placeholder="Habilitado" value="1" <% if (item.get('habilitado') == '1') { %>checked="checked"<% } %>>
 						<span class="help-inline"></span>
 					</div>
 				</div>

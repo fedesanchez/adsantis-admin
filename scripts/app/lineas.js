@@ -179,6 +179,7 @@ var page = {
 		if (page.linea.id == null || page.linea.id == '') {
 			// this is a new record, there is no need to contact the server
 			page.renderModelView(false);
+			inicializar_fileupload('#fileupload','linea','#img');
 		} else {
 			app.showProgress('modelLoader');
 
@@ -188,6 +189,7 @@ var page = {
 				success: function() {
 					// data returned from the server.  render the model view
 					page.renderModelView(true);
+					inicializar_fileupload('#fileupload','linea','#img');
 				},
 
 				error: function(m, r) {
@@ -197,7 +199,7 @@ var page = {
 
 			});
 		}
-
+		
 	},
 
 	/**
