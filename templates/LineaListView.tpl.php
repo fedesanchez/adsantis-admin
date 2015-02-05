@@ -8,7 +8,7 @@
 <script type="text/javascript">
 	$LAB.script("scripts/app/lineas.js").wait(function(){
 		$(document).ready(function(){
-			page.init();
+			page.init();					
 		});
 		
 		// hack for IE9 which may respond inconsistently with document.ready
@@ -16,6 +16,7 @@
 			if (!page.isInitialized) page.init();
 		},1000);
 	});
+	$LAB.script("scripts/libs/jquery.tagsinput.js").wait()
 </script>
 
 <div class="container">
@@ -128,10 +129,11 @@
 				<div id="atributosInputContainer" class="control-group">
 					<label class="control-label" for="atributos">Atributos</label>
 					<div class="controls inline-inputs">
-						<textarea class="input-xlarge" id="atributos" rows="3"><%= _.escape(item.get('atributos') || '') %></textarea>
+						<textarea class="tags" id="atributos" rows="3"><%= _.escape(item.get('atributos') || '') %></textarea>
 						<span class="help-inline"></span>
 					</div>
 				</div>
+				
 				
 			</fieldset>
 		</form>

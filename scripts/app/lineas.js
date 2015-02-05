@@ -274,6 +274,8 @@ var page = {
 			// no point in initializing the click handlers if we don't show the button
 			$('#deleteLineaButtonContainer').hide();
 		}
+
+		$('#atributos').tagsInput({width:'auto'});
 	},
 
 	/**
