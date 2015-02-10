@@ -41,23 +41,17 @@
 				<th id="header_Img">Img<% if (page.orderBy == 'Img') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Descripcion">Descripcion<% if (page.orderBy == 'Descripcion') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Atributos">Atributos<% if (page.orderBy == 'Atributos') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-<!-- UNCOMMENT TO SHOW ADDITIONAL COLUMNS
-				
--->
 			</tr>
 		</thead>
 		<tbody>
 		<% items.each(function(item) { %>
 			<tr id="<%= _.escape(item.get('idLinea')) %>">
-			    <td><%= _.escape(item.get('nombre') || '') %></td>
 				<td><%= _.escape(item.get('idLinea') || '') %></td>
+			    <td><%= _.escape(item.get('nombre') || '') %></td>			
 				<td><%= _.escape(item.get('idCategoria') || '') %></td>
 				<td><%= _.escape(item.get('img') || '') %></td>
 				<td><%= _.escape(item.get('descripcion') || '') %></td>
 				<td><%= _.escape(item.get('atributos') || '') %></td>
-<!-- UNCOMMENT TO SHOW ADDITIONAL COLUMNS
-				
--->
 			</tr>
 		<% }); %>
 		</tbody>
@@ -126,14 +120,14 @@
 						<span class="help-inline"></span>
 					</div>
 				</div>
-				<div id="atributosInputContainer" class="control-group">
+			<div id="atributosInputContainer" class="control-group">
 					<label class="control-label" for="atributos">Atributos</label>
 					<div class="controls inline-inputs">
-						<textarea class="tags" id="atributos" rows="3"><%= _.escape(item.get('atributos') || '') %></textarea>
+						<textarea class="tags input-xlarge" id="atributos" rows="3"><%= _.escape(item.get('atributos') || '') %></textarea>
 						<span class="help-inline"></span>
 					</div>
 				</div>
-				
+
 				
 			</fieldset>
 		</form>

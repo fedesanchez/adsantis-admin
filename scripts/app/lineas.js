@@ -275,7 +275,7 @@ var page = {
 			$('#deleteLineaButtonContainer').hide();
 		}
 
-		$('#atributos').tagsInput({width:'auto'});
+		$('.tags').tagsInput({width:'auto'});
 	},
 
 	/**
