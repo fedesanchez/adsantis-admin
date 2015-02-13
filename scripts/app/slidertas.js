@@ -179,6 +179,7 @@ var page = {
 		if (page.sliderTa.id == null || page.sliderTa.id == '') {
 			// this is a new record, there is no need to contact the server
 			page.renderModelView(false);
+			inicializar_fileupload('#fileupload-sliderta-fondo','sliderta','#imgProducto');
 		} else {
 			app.showProgress('modelLoader');
 
@@ -188,6 +189,7 @@ var page = {
 				success: function() {
 					// data returned from the server.  render the model view
 					page.renderModelView(true);
+					inicializar_fileupload('#fileupload-sliderta-fondo','sliderta','#imgProducto');
 				},
 
 				error: function(m, r) {
@@ -267,14 +269,14 @@ var page = {
 			'imgProducto': $('input#imgProducto').val(),
 			'titProducto': $('input#titProducto').val(),
 			'titProp1': $('input#titProp1').val(),
-			'descProp1': $('input#descProp1').val(),
+			'descProp1': $('textarea#descProp1').val(),
 			'titProp2': $('input#titProp2').val(),
-			'descProp2': $('input#descProp2').val(),
+			'descProp2': $('textarea#descProp2').val(),
 			'titProp3': $('input#titProp3').val(),
-			'descProp3': $('input#descProp3').val(),
+			'descProp3': $('textarea#descProp3').val(),
 			'link': $('input#link').val(),
-			'orden': $('input#orden').val(),
-			'habilitado': $('input#habilitado').val()
+			'orden': $('input#orden').val(),			
+			'habilitado': ($('input#habilitado').is(":checked") ? 1 : 0)
 		}, {
 			wait: true,
 			success: function(){

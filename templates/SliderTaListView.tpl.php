@@ -21,7 +21,7 @@
 <div class="container">
 
 <h1>
-	<i class="icon-th-list"></i> SliderTas
+	<i class="icon-th-list"></i> Slider Triple acción
 	<span id=loader class="loader progress progress-striped active"><span class="bar"></span></span>
 	<span class='input-append pull-right searchContainer'>
 		<input id='filter' type="text" placeholder="Search..." />
@@ -34,16 +34,16 @@
 		<table class="collection table table-bordered table-hover">
 		<thead>
 			<tr>
-				<th id="header_IdSliderTa">Id Slider Ta<% if (page.orderBy == 'IdSliderTa') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-				<th id="header_ImgProducto">Img Producto<% if (page.orderBy == 'ImgProducto') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-				<th id="header_TitProducto">Tit Producto<% if (page.orderBy == 'TitProducto') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-				<th id="header_TitProp1">Tit Prop 1<% if (page.orderBy == 'TitProp1') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-				<th id="header_DescProp1">Desc Prop 1<% if (page.orderBy == 'DescProp1') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_IdSliderTa">Id <% if (page.orderBy == 'IdSliderTa') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_ImgProducto">Imagen Producto<% if (page.orderBy == 'ImgProducto') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_TitProducto">Título Producto<% if (page.orderBy == 'TitProducto') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_TitProp1">Característica 1<% if (page.orderBy == 'TitProp1') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_TitProp2">Característica 2<% if (page.orderBy == 'TitProp2') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_TitProp3">Característica 3<% if (page.orderBy == 'TitProp3') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 <!-- UNCOMMENT TO SHOW ADDITIONAL COLUMNS
-				<th id="header_TitProp2">Tit Prop 2<% if (page.orderBy == 'TitProp2') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-				<th id="header_DescProp2">Desc Prop 2<% if (page.orderBy == 'DescProp2') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-				<th id="header_TitProp3">Tit Prop 3<% if (page.orderBy == 'TitProp3') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-				<th id="header_DescProp3">Desc Prop 3<% if (page.orderBy == 'DescProp3') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_DescProp1">Descripción C1<% if (page.orderBy == 'DescProp1') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>				
+				<th id="header_DescProp2">Descripción C2<% if (page.orderBy == 'DescProp2') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>				
+				<th id="header_DescProp3">Descripción C3<% if (page.orderBy == 'DescProp3') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Link">Link<% if (page.orderBy == 'Link') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Orden">Orden<% if (page.orderBy == 'Orden') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Habilitado">Habilitado<% if (page.orderBy == 'Habilitado') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
@@ -57,11 +57,11 @@
 				<td><%= _.escape(item.get('imgProducto') || '') %></td>
 				<td><%= _.escape(item.get('titProducto') || '') %></td>
 				<td><%= _.escape(item.get('titProp1') || '') %></td>
-				<td><%= _.escape(item.get('descProp1') || '') %></td>
-<!-- UNCOMMENT TO SHOW ADDITIONAL COLUMNS
-				<td><%= _.escape(item.get('titProp2') || '') %></td>
-				<td><%= _.escape(item.get('descProp2') || '') %></td>
+				<td><%= _.escape(item.get('titProp2') || '') %></td>				
 				<td><%= _.escape(item.get('titProp3') || '') %></td>
+<!-- UNCOMMENT TO SHOW ADDITIONAL COLUMNS
+				<td><%= _.escape(item.get('descProp1') || '') %></td>
+				<td><%= _.escape(item.get('descProp2') || '') %></td>				
 				<td><%= _.escape(item.get('descProp3') || '') %></td>
 				<td><%= _.escape(item.get('link') || '') %></td>
 				<td><%= _.escape(item.get('orden') || '') %></td>
@@ -80,65 +80,85 @@
 		<form class="form-horizontal" onsubmit="return false;">
 			<fieldset>
 				<div id="idSliderTaInputContainer" class="control-group">
-					<label class="control-label" for="idSliderTa">Id Slider Ta</label>
+					<label class="control-label" for="idSliderTa">Id</label>
 					<div class="controls inline-inputs">
 						<span class="input-xlarge uneditable-input" id="idSliderTa"><%= _.escape(item.get('idSliderTa') || '') %></span>
 						<span class="help-inline"></span>
 					</div>
 				</div>
-				<div id="imgProductoInputContainer" class="control-group">
-					<label class="control-label" for="imgProducto">Img Producto</label>
-					<div class="controls inline-inputs">
-						<input type="text" class="input-xlarge" id="imgProducto" placeholder="Img Producto" value="<%= _.escape(item.get('imgProducto') || '') %>">
-						<span class="help-inline"></span>
-					</div>
-				</div>
+
 				<div id="titProductoInputContainer" class="control-group">
-					<label class="control-label" for="titProducto">Tit Producto</label>
+					<label class="control-label" for="titProducto">Título Producto</label>
 					<div class="controls inline-inputs">
-						<input type="text" class="input-xlarge" id="titProducto" placeholder="Tit Producto" value="<%= _.escape(item.get('titProducto') || '') %>">
+						<input type="text" class="input-xlarge" id="titProducto" placeholder="título" value="<%= _.escape(item.get('titProducto') || '') %>">
 						<span class="help-inline"></span>
 					</div>
 				</div>
-				<div id="titProp1InputContainer" class="control-group">
-					<label class="control-label" for="titProp1">Tit Prop 1</label>
+
+				<div id="imgProductoInputContainer" class="control-group">
+					<label class="control-label" for="imgProducto">Imagen Producto</label>
 					<div class="controls inline-inputs">
-						<input type="text" class="input-xlarge" id="titProp1" placeholder="Tit Prop 1" value="<%= _.escape(item.get('titProp1') || '') %>">
+						<input type="text" class="input-xlarge" id="imgProducto" placeholder="seleccione imagen" value="<%= _.escape(item.get('imgProducto') || '') %>" disabled>
+						<span class="help-inline"></span>
+						<div>
+		                    <span class="btn btn-success fileinput-button">
+		                        <i class="icon-plus"></i>
+		                        <span>Adjuntar...</span>
+		                        <!-- The file input field used as target for the file upload widget -->
+		                        <input id="fileupload-sliderta-fondo" type="file" name="files[]" multiple>
+		                    </span>
+		                    <br>
+		                    <br>
+		                    <!-- The global progress bar -->
+		                    <div id="progress" class="progress">
+		                        <div class="bar progress-bar-success"></div>
+		                    </div>
+		                    <!-- The container for the uploaded files -->
+		                    <div id="files" class="files"></div>
+                    		<br>
+                		</div>
+					</div>
+				</div>
+				
+				<div id="titProp1InputContainer" class="control-group">
+					<label class="control-label" for="titProp1">Característica 1</label>
+					<div class="controls inline-inputs">
+						<input type="text" class="input-xlarge" id="titProp1" placeholder="título de la característica 1" value="<%= _.escape(item.get('titProp1') || '') %>">
 						<span class="help-inline"></span>
 					</div>
 				</div>
 				<div id="descProp1InputContainer" class="control-group">
-					<label class="control-label" for="descProp1">Desc Prop 1</label>
+					<label class="control-label" for="descProp1">Descripción C1</label>
 					<div class="controls inline-inputs">
-						<input type="text" class="input-xlarge" id="descProp1" placeholder="Desc Prop 1" value="<%= _.escape(item.get('descProp1') || '') %>">
+						<textarea class="input-xlarge" id="descProp1" placeholder="Descripción de la característica 1" ><%= _.escape(item.get('descProp1') || '') %></textarea>
 						<span class="help-inline"></span>
 					</div>
 				</div>
 				<div id="titProp2InputContainer" class="control-group">
-					<label class="control-label" for="titProp2">Tit Prop 2</label>
+					<label class="control-label" for="titProp2">Característica 2</label>
 					<div class="controls inline-inputs">
-						<input type="text" class="input-xlarge" id="titProp2" placeholder="Tit Prop 2" value="<%= _.escape(item.get('titProp2') || '') %>">
+						<input type="text" class="input-xlarge" id="titProp2" placeholder="título de la característica 2" value="<%= _.escape(item.get('titProp2') || '') %>">
 						<span class="help-inline"></span>
 					</div>
 				</div>
 				<div id="descProp2InputContainer" class="control-group">
-					<label class="control-label" for="descProp2">Desc Prop 2</label>
+					<label class="control-label" for="descProp2">Descripción C2</label>
 					<div class="controls inline-inputs">
-						<input type="text" class="input-xlarge" id="descProp2" placeholder="Desc Prop 2" value="<%= _.escape(item.get('descProp2') || '') %>">
+						<textarea class="input-xlarge" id="descProp2" placeholder="Descripción de la característica 2"><%= _.escape(item.get('descProp2') || '') %></textarea>
 						<span class="help-inline"></span>
 					</div>
 				</div>
 				<div id="titProp3InputContainer" class="control-group">
-					<label class="control-label" for="titProp3">Tit Prop 3</label>
+					<label class="control-label" for="titProp3">Característica 3</label>
 					<div class="controls inline-inputs">
-						<input type="text" class="input-xlarge" id="titProp3" placeholder="Tit Prop 3" value="<%= _.escape(item.get('titProp3') || '') %>">
+						<input type="text" class="input-xlarge" id="titProp3" placeholder="título de la característica 3" value="<%= _.escape(item.get('titProp3') || '') %>">
 						<span class="help-inline"></span>
 					</div>
 				</div>
 				<div id="descProp3InputContainer" class="control-group">
-					<label class="control-label" for="descProp3">Desc Prop 3</label>
+					<label class="control-label" for="descProp3">Descripción C3</label>
 					<div class="controls inline-inputs">
-						<input type="text" class="input-xlarge" id="descProp3" placeholder="Desc Prop 3" value="<%= _.escape(item.get('descProp3') || '') %>">
+						<textarea class="input-xlarge" id="descProp3" placeholder="Descripción de la característica 3"><%= _.escape(item.get('descProp3') || '') %></textarea>
 						<span class="help-inline"></span>
 					</div>
 				</div>
@@ -159,7 +179,7 @@
 				<div id="habilitadoInputContainer" class="control-group">
 					<label class="control-label" for="habilitado">Habilitado</label>
 					<div class="controls inline-inputs">
-						<input type="text" class="input-xlarge" id="habilitado" placeholder="Habilitado" value="<%= _.escape(item.get('habilitado') || '') %>">
+						<input type="checkbox" class="input-xlarge" id="habilitado" placeholder="Habilitado" value="1" <% if (item.get('habilitado') == '1') { %>checked="checked"<% } %> >
 						<span class="help-inline"></span>
 					</div>
 				</div>
@@ -172,10 +192,10 @@
 				<div class="control-group">
 					<label class="control-label"></label>
 					<div class="controls">
-						<button id="deleteSliderTaButton" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i> Delete SliderTa</button>
+						<button id="deleteSliderTaButton" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i> Borrar</button>
 						<span id="confirmDeleteSliderTaContainer" class="hide">
-							<button id="cancelDeleteSliderTaButton" class="btn btn-mini">Cancel</button>
-							<button id="confirmDeleteSliderTaButton" class="btn btn-mini btn-danger">Confirm</button>
+							<button id="cancelDeleteSliderTaButton" class="btn btn-mini">Cancelar</button>
+							<button id="confirmDeleteSliderTaButton" class="btn btn-mini btn-danger">Confirmar</button>
 						</span>
 					</div>
 				</div>
@@ -188,7 +208,7 @@
 		<div class="modal-header">
 			<a class="close" data-dismiss="modal">&times;</a>
 			<h3>
-				<i class="icon-edit"></i> Edit SliderTa
+				<i class="icon-edit"></i> Editar Slider Triple acción
 				<span id="modelLoader" class="loader progress progress-striped active"><span class="bar"></span></span>
 			</h3>
 		</div>
@@ -197,8 +217,8 @@
 			<div id="sliderTaModelContainer"></div>
 		</div>
 		<div class="modal-footer">
-			<button class="btn" data-dismiss="modal" >Cancel</button>
-			<button id="saveSliderTaButton" class="btn btn-primary">Save Changes</button>
+			<button class="btn" data-dismiss="modal" >Cancelar</button>
+			<button id="saveSliderTaButton" class="btn btn-primary">Guardar</button>
 		</div>
 	</div>
 
@@ -208,7 +228,7 @@
 	</div>
 
 	<p id="newButtonContainer" class="buttonContainer">
-		<button id="newSliderTaButton" class="btn btn-primary">Add SliderTa</button>
+		<button id="newSliderTaButton" class="btn btn-primary">Agregar Slider</button>
 	</p>
 
 </div> <!-- /container -->
