@@ -31,6 +31,9 @@ class LineaDAO extends Phreezable
 	public $Img;
 
 	/** @var string */
+	public $Resumen;
+	
+	/** @var string */
 	public $Descripcion;
 
 	/** @var string */

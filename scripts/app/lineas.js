@@ -296,6 +296,7 @@ var page = {
 			'idLinea': $('input#idLinea').val(),
 			'idCategoria': $('select#idCategoria').val(),
 			'img': $('input#img').val(),
+			'resumen': $('textarea#resumen').val(),
 			'descripcion': $('textarea#descripcion').val(),
 			'atributos': $('textarea#atributos').val(),
 			'nombre': $('input#nombre').val()

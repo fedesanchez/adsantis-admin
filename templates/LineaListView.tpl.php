@@ -39,6 +39,7 @@
 				<th id="header_Nombre">Nombre<% if (page.orderBy == 'Nombre') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_IdCategoria">Id Categoria<% if (page.orderBy == 'IdCategoria') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Img">Img<% if (page.orderBy == 'Img') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_Resumen">Resumen<% if (page.orderBy == 'Resumen') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Descripcion">Descripcion<% if (page.orderBy == 'Descripcion') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Atributos">Atributos<% if (page.orderBy == 'Atributos') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 			</tr>
@@ -50,6 +51,7 @@
 			    <td><%= _.escape(item.get('nombre') || '') %></td>			
 				<td><%= _.escape(item.get('idCategoria') || '') %></td>
 				<td><%= _.escape(item.get('img') || '') %></td>
+				<td><%= _.escape(item.get('resumen') || '') %></td>
 				<td><%= _.escape(item.get('descripcion') || '') %></td>
 				<td><%= _.escape(item.get('atributos') || '') %></td>
 			</tr>
@@ -113,6 +115,13 @@
 
 					</div>
 				</div>
+				<div id="resumenInputContainer" class="control-group">
+					<label class="control-label" for="resumen">Resumen</label>
+					<div class="controls inline-inputs">
+						<textarea class="input-xlarge" id="resumen" rows="3"><%= _.escape(item.get('resumen') || '') %></textarea>
+						<span class="help-inline"></span>
+					</div>
+				</div>
 				<div id="descripcionInputContainer" class="control-group">
 					<label class="control-label" for="descripcion">Descripcion</label>
 					<div class="controls inline-inputs">
@@ -155,7 +164,7 @@
 		<div class="modal-header">
 			<a class="close" data-dismiss="modal">&times;</a>
 			<h3>
-				<i class="icon-edit"></i> Edit Linea
+				<i class="icon-edit"></i> Editar Linea
 				<span id="modelLoader" class="loader progress progress-striped active"><span class="bar"></span></span>
 			</h3>
 		</div>
@@ -164,8 +173,8 @@
 			<div id="lineaModelContainer"></div>
 		</div>
 		<div class="modal-footer">
-			<button class="btn" data-dismiss="modal" >Cancel</button>
-			<button id="saveLineaButton" class="btn btn-primary">Save Changes</button>
+			<button class="btn" data-dismiss="modal" >Cancelar</button>
+			<button id="saveLineaButton" class="btn btn-primary">Guardar</button>
 		</div>
 	</div>
 
@@ -175,7 +184,7 @@
 	</div>
 
 	<p id="newButtonContainer" class="buttonContainer">
-		<button id="newLineaButton" class="btn btn-primary">Add Linea</button>
+		<button id="newLineaButton" class="btn btn-primary">Agregar Linea</button>
 	</p>
 
 </div> <!-- /container -->

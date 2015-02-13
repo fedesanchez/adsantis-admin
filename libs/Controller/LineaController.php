@@ -159,6 +159,7 @@ class LineaController extends AppBaseController
 			$linea->IdLinea = $this->SafeGetVal($json, 'idLinea');
 			$linea->IdCategoria = $this->SafeGetVal($json, 'idCategoria');
 			$linea->Img = $this->SafeGetVal($json, 'img');
+			$linea->Resumen = $this->SafeGetVal($json, 'resumen');
 			$linea->Descripcion = $this->SafeGetVal($json, 'descripcion');
 			$linea->Atributos = $this->SafeGetVal($json, 'atributos');
 			$linea->Nombre = $this->SafeGetVal($json, 'nombre');
@@ -209,6 +210,7 @@ class LineaController extends AppBaseController
 
 			$linea->IdCategoria = $this->SafeGetVal($json, 'idCategoria', $linea->IdCategoria);
 			$linea->Img = $this->SafeGetVal($json, 'img', $linea->Img);
+			$linea->Resumen = $this->SafeGetVal($json, 'resumen', $linea->Resumen);
 			$linea->Descripcion = $this->SafeGetVal($json, 'descripcion', $linea->Descripcion);
 			$linea->Atributos = $this->SafeGetVal($json, 'atributos', $linea->Atributos);
 			$linea->Nombre = $this->SafeGetVal($json, 'nombre', $linea->Nombre);

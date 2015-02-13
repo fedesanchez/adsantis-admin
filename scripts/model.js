@@ -187,6 +187,7 @@ model.LineaModel = Backbone.Model.extend({
 	idLinea: '',
 	idCategoria: '',
 	img: '',
+	resumen:'',
 	descripcion: '',
 	atributos: '',
 	nombre: '',
@@ -194,6 +195,7 @@ model.LineaModel = Backbone.Model.extend({
 		'idLinea': null,
 		'idCategoria': '',
 		'img': '',
+		'resumen':'',
 		'descripcion': '',
 		'atributos': '',
 		'nombre': ''
