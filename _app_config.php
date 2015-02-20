@@ -144,6 +144,25 @@ GlobalConfig::$ROUTE_MAP = array(
 	'PUT:api/usuario/(:num)' => array('route' => 'Usuario.Update', 'params' => array('idUsuario' => 2)),
 	'DELETE:api/usuario/(:num)' => array('route' => 'Usuario.Delete', 'params' => array('idUsuario' => 2)),
 
+	// PuntoVenta
+	'GET:puntosdeventa' => array('route' => 'PuntoVenta.ListView'),
+	'GET:puntoventa/(:num)' => array('route' => 'PuntoVenta.SingleView', 'params' => array('idPunto' => 1)),
+	'GET:api/puntos de ventas' => array('route' => 'PuntoVenta.Query'),
+	'POST:api/puntoventa' => array('route' => 'PuntoVenta.Create'),
+	'GET:api/puntoventa/(:num)' => array('route' => 'PuntoVenta.Read', 'params' => array('idPunto' => 2)),
+	'PUT:api/puntoventa/(:num)' => array('route' => 'PuntoVenta.Update', 'params' => array('idPunto' => 2)),
+	'DELETE:api/puntoventa/(:num)' => array('route' => 'PuntoVenta.Delete', 'params' => array('idPunto' => 2)),
+		
+	// Salon
+	'GET:salones' => array('route' => 'Salon.ListView'),
+	'GET:salon/(:num)' => array('route' => 'Salon.SingleView', 'params' => array('idSalon' => 1)),
+	'GET:api/salones' => array('route' => 'Salon.Query'),
+	'POST:api/salon' => array('route' => 'Salon.Create'),
+	'GET:api/salon/(:num)' => array('route' => 'Salon.Read', 'params' => array('idSalon' => 2)),
+	'PUT:api/salon/(:num)' => array('route' => 'Salon.Update', 'params' => array('idSalon' => 2)),
+	'DELETE:api/salon/(:num)' => array('route' => 'Salon.Delete', 'params' => array('idSalon' => 2)),
+
+
 	// catch any broken API urls
 	'GET:api/(:any)' => array('route' => 'Default.ErrorApi404'),
 	'PUT:api/(:any)' => array('route' => 'Default.ErrorApi404'),

@@ -344,3 +344,66 @@ model.UsuarioCollection = model.AbstractCollection.extend({
 	model: model.UsuarioModel
 });
 
+/**
+ * PuntoVenta Backbone Model
+ */
+model.PuntoVentaModel = Backbone.Model.extend({
+	urlRoot: 'api/puntoventa',
+	idAttribute: 'idPunto',
+	idPunto: '',
+	nombre: '',
+	direccion: '',
+	telefono: '',
+	email: '',
+	latitud: '',
+	longitud: '',
+	defaults: {
+		'idPunto': null,
+		'nombre': '',
+		'direccion': '',
+		'telefono': '',
+		'email': '',
+		'latitud': '',
+		'longitud': ''
+	}
+});
+
+/**
+ * PuntoVenta Backbone Collection
+ */
+model.PuntoVentaCollection = model.AbstractCollection.extend({
+	url: 'api/puntos de ventas',
+	model: model.PuntoVentaModel
+});
+
+/**
+ * Salon Backbone Model
+ */
+model.SalonModel = Backbone.Model.extend({
+	urlRoot: 'api/salon',
+	idAttribute: 'idSalon',
+	idSalon: '',
+	nombre: '',
+	direccion: '',
+	telefono: '',
+	email: '',
+	latitud: '',
+	longitud: '',
+	defaults: {
+		'idSalon': null,
+		'nombre': '',
+		'direccion': '',
+		'telefono': '',
+		'email': '',
+		'latitud': '',
+		'longitud': ''
+	}
+});
+
+/**
+ * Salon Backbone Collection
+ */
+model.SalonCollection = model.AbstractCollection.extend({
+	url: 'api/salones',
+	model: model.SalonModel
+});

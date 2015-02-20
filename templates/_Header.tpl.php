@@ -118,7 +118,7 @@
                         <a href="./sliders"><i class="icon-chevron-right"></i> Slider Principal</a>
                     </li>
                     <li  <?php if ($this->nav=='slidersta') { echo 'class="active"'; } ?>>
-                        <a href="./slidertas"><i class="icon-chevron-right"></i> Slider Triple Accion</a>
+                        <a href="./slidertas"><i class="icon-chevron-right"></i> Triple Accion</a>
                     </li>
                     
                     <li  <?php if ($this->nav=='testimonios') { echo 'class="active"'; } ?>>
@@ -127,7 +127,12 @@
                     <li  <?php if ($this->nav=='consejos') { echo 'class="active"'; } ?>>
                         <a href="./consejos"><i class="icon-chevron-right"></i> Consejos</a>
                     </li>
-                    
+                    <li  <?php if ($this->nav=='puntos') { echo 'class="active"'; } ?>>
+                        <a href="./puntosdeventa"><i class="icon-chevron-right"></i> Puntos de Venta</a>
+                    </li>
+                    <li  <?php if ($this->nav=='salones') { echo 'class="active"'; } ?>>
+                        <a href="./salones"><i class="icon-chevron-right"></i> Salones</a>
+                    </li>
                     </ul>
                 </div>
 			
