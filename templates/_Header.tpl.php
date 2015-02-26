@@ -26,7 +26,7 @@
 		<link href="bootstrap/css/bootstrap-combobox.css" rel="stylesheet" />
 		<link href="bootstrap/css/styles.css" rel="stylesheet" />
 		<link rel="stylesheet" href="upload/jquery.fileupload.css">
-		<link rel="stylesheet" type="text/css" href="styles/jquery.tagsinput.css" />
+		<link rel="stylesheet" type="text/css" href="styles/jquery.tag-editor.css" />
 		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
 			<script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

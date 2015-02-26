@@ -275,7 +275,7 @@ var page = {
 			$('#deleteLineaButtonContainer').hide();
 		}
 
-		$('.tags').tagsInput({width:'auto'});
+		$('.tags').tagEditor();
 	},
 
 	/**
@@ -304,7 +304,7 @@ var page = {
 			wait: true,
 			success: function(){
 				$('#lineaDetailDialog').modal('hide');
-				setTimeout("app.appendAlert('Linea was sucessfully " + (isNew ? "inserted" : "updated") + "','alert-success',3000,'collectionAlert')",500);
+				setTimeout("app.appendAlert('La Linea fue " + (isNew ? "insertada" : "actualizada") + " exitosamente','alert-success',3000,'collectionAlert')",500);
 				app.hideProgress('modelLoader');
 
 				// if the collection was initally new then we need to add it to the collection now
@@ -351,7 +351,7 @@ var page = {
 			wait: true,
 			success: function(){
 				$('#lineaDetailDialog').modal('hide');
-				setTimeout("app.appendAlert('The Linea record was deleted','alert-success',3000,'collectionAlert')",500);
+				setTimeout("app.appendAlert('La Linea fue borrada exitosamente','alert-success',3000,'collectionAlert')",500);
 				app.hideProgress('modelLoader');
 
 				if (model.reloadCollectionOnModelUpdate) {

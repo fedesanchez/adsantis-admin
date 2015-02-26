@@ -16,7 +16,9 @@
 			if (!page.isInitialized) page.init();
 		},1000);
 	});
-	$LAB.script("scripts/libs/jquery.tagsinput.js").wait()
+	$LAB.script("scripts/libs/jquery.tag-editor.min.js").wait();
+	$LAB.script("scripts/libs/jquery.caret.min.js").wait();
+	
 </script>
 
 <div class="container">
@@ -25,7 +27,7 @@
 	<i class="icon-th-list"></i> Lineas
 	<span id=loader class="loader progress progress-striped active"><span class="bar"></span></span>
 	<span class='input-append pull-right searchContainer'>
-		<input id='filter' type="text" placeholder="Search..." />
+		<input id='filter' type="text" placeholder="Buscar..." />
 		<button class='btn add-on'><i class="icon-search"></i></button>
 	</span>
 </h1>
@@ -35,12 +37,12 @@
 		<table class="collection table table-bordered table-hover">
 		<thead>
 			<tr>
-				<th id="header_IdLinea">Id Linea<% if (page.orderBy == 'IdLinea') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_IdLinea">Id<% if (page.orderBy == 'IdLinea') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Nombre">Nombre<% if (page.orderBy == 'Nombre') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-				<th id="header_IdCategoria">Id Categoria<% if (page.orderBy == 'IdCategoria') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-				<th id="header_Img">Img<% if (page.orderBy == 'Img') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_IdCategoria">Categoría<% if (page.orderBy == 'IdCategoria') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_Img">Imagen<% if (page.orderBy == 'Img') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Resumen">Resumen<% if (page.orderBy == 'Resumen') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-				<th id="header_Descripcion">Descripcion<% if (page.orderBy == 'Descripcion') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_Descripcion">Descripción<% if (page.orderBy == 'Descripcion') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Atributos">Atributos<% if (page.orderBy == 'Atributos') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 			</tr>
 		</thead>
@@ -81,7 +83,7 @@
 					</div>
 				</div>
 				<div id="idCategoriaInputContainer" class="control-group">
-					<label class="control-label" for="idCategoria">Categoria</label>
+					<label class="control-label" for="idCategoria">Categoría</label>
 					<div class="controls inline-inputs">
 						<select id="idCategoria" name="idCategoria"></select>
 						<span class="help-inline"></span>
@@ -123,7 +125,7 @@
 					</div>
 				</div>
 				<div id="descripcionInputContainer" class="control-group">
-					<label class="control-label" for="descripcion">Descripcion</label>
+					<label class="control-label" for="descripcion">Descripción</label>
 					<div class="controls inline-inputs">
 						<textarea class="input-xlarge" id="descripcion" rows="3"><%= _.escape(item.get('descripcion') || '') %></textarea>
 						<span class="help-inline"></span>
@@ -148,10 +150,10 @@
 				<div class="control-group">
 					<label class="control-label"></label>
 					<div class="controls">
-						<button id="deleteLineaButton" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i> Delete Linea</button>
+						<button id="deleteLineaButton" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i> Borrar Linea</button>
 						<span id="confirmDeleteLineaContainer" class="hide">
-							<button id="cancelDeleteLineaButton" class="btn btn-mini">Cancel</button>
-							<button id="confirmDeleteLineaButton" class="btn btn-mini btn-danger">Confirm</button>
+							<button id="cancelDeleteLineaButton" class="btn btn-mini">Cancelar</button>
+							<button id="confirmDeleteLineaButton" class="btn btn-mini btn-danger">Confirmar</button>
 						</span>
 					</div>
 				</div>
