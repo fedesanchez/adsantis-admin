@@ -69,9 +69,9 @@
 		<form class="form-horizontal" onsubmit="return false;">
 			<fieldset>
 				<div id="idLineaInputContainer" class="control-group">
-					<label class="control-label" for="idLinea">Id Linea</label>
+					<label class="control-label" for="idLinea">Id</label>
 					<div class="controls inline-inputs">
-						<input type="text" class="input-xlarge" id="idLinea" placeholder="Id Linea" value="<%= _.escape(item.get('idLinea') || '') %>">
+						<input type="text" class="input-xlarge uneditable-input" id="idLinea" placeholder="" value="<%= _.escape(item.get('idLinea') || '') %>">
 						<span class="help-inline"></span>
 					</div>
 				</div>

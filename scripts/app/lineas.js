@@ -275,7 +275,7 @@ var page = {
 			$('#deleteLineaButtonContainer').hide();
 		}
 
-		$('.tags').tagEditor();
+		$('.tags').tagEditor({forceLowercase:false});
 	},
 
 	/**

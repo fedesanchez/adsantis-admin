@@ -64,5 +64,10 @@ class DefaultController extends AppBaseController
 		$this->RenderErrorJSON('An unknown API endpoint was requested.');
 	}
 
+	public function Estadisticas(){
+		$this->Assign("currentUser", $this->GetCurrentUser());
+		$this->Render('Estadisticas');
+	}
+
 }
 ?>

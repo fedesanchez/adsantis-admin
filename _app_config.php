@@ -80,7 +80,10 @@ GlobalConfig::$ROUTE_MAP = array(
 	'GET:secureuser' => array('route' => 'Secure.UserPage'),
 	'GET:secureadmin' => array('route' => 'Secure.AdminPage'),
 	'GET:logout' => array('route' => 'Secure.Logout'),
-		
+
+	//estadisticas
+	'GET:estadisticas' => array('route' => 'Default.Estadisticas'),
+
 	// Categoria
 	'GET:categorias' => array('route' => 'Categoria.ListView'),
 	'GET:categoria/(:num)' => array('route' => 'Categoria.SingleView', 'params' => array('idCategoria' => 1)),
