@@ -299,7 +299,9 @@ var page = {
 			'resumen': $('textarea#resumen').val(),
 			'descripcion': $('textarea#descripcion').val(),
 			'atributos': $('textarea#atributos').val(),
-			'nombre': $('input#nombre').val()
+			'nombre': $('input#nombre').val(),
+			'novedad': ($('input#novedad').is(":checked") ? 1 : 0),
+			'colorFondo': $('input#colorFondo').val()
 		}, {
 			wait: true,
 			success: function(){

@@ -191,6 +191,8 @@ model.LineaModel = Backbone.Model.extend({
 	descripcion: '',
 	atributos: '',
 	nombre: '',
+	novedad:'',
+	colorFondo:'',
 	defaults: {
 		'idLinea': null,
 		'idCategoria': '',
@@ -198,7 +200,9 @@ model.LineaModel = Backbone.Model.extend({
 		'resumen':'',
 		'descripcion': '',
 		'atributos': '',
-		'nombre': ''
+		'nombre': '',
+		'novedad':'',
+		'colorFondo':''
 	}
 });
 
@@ -232,9 +236,9 @@ model.SliderModel = Backbone.Model.extend({
 		'nombreProducto': '',
 		'descSupProd': '',
 		'descInfProd': '',
-		'link': '',
-		'orden': '',
-		'habilitado': ''
+		'link': '#',
+		'orden': '1',
+		'habilitado': '1'
 	}
 });
 
@@ -274,9 +278,9 @@ model.SliderTaModel = Backbone.Model.extend({
 		'descProp2': '',
 		'titProp3': '',
 		'descProp3': '',
-		'link': '',
-		'orden': '',
-		'habilitado': ''
+		'link': '#',
+		'orden': '1',
+		'habilitado': '1'
 	}
 });
 

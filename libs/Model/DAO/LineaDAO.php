@@ -42,6 +42,9 @@ class LineaDAO extends Phreezable
 	/** @var string */
 	public $Nombre;
 
+	public $Novedad;
+
+	public $ColorFondo;
 
 
 }

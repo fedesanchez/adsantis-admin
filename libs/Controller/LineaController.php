@@ -163,6 +163,8 @@ class LineaController extends AppBaseController
 			$linea->Descripcion = $this->SafeGetVal($json, 'descripcion');
 			$linea->Atributos = $this->SafeGetVal($json, 'atributos');
 			$linea->Nombre = $this->SafeGetVal($json, 'nombre');
+			$linea->Novedad = $this->SafeGetVal($json, 'novedad');
+			$linea->ColorFondo = $this->SafeGetVal($json, 'colorFondo');
 
 			$linea->Validate();
 			$errors = $linea->GetValidationErrors();
@@ -214,6 +216,8 @@ class LineaController extends AppBaseController
 			$linea->Descripcion = $this->SafeGetVal($json, 'descripcion', $linea->Descripcion);
 			$linea->Atributos = $this->SafeGetVal($json, 'atributos', $linea->Atributos);
 			$linea->Nombre = $this->SafeGetVal($json, 'nombre', $linea->Nombre);
+			$linea->Novedad = $this->SafeGetVal($json, 'novedad', $linea->Novedad);
+			$linea->ColorFondo = $this->SafeGetVal($json, 'colorFondo', $linea->ColorFondo);
 
 			$linea->Validate();
 			$errors = $linea->GetValidationErrors();

@@ -1,5 +1,5 @@
 <?php
-	$this->assign('title','Anna De Santis | Sliders');
+	$this->assign('title','Anna De Sanctis | Sliders');
 	$this->assign('nav','sliders');
 
 	$this->display('_Header.tpl.php');
@@ -21,7 +21,7 @@
 <div class="container">
 
 <h1>
-	<i class="icon-th-list"></i> Sliders
+	<i class="icon-th-list"></i> Slider Principal
 	<span id=loader class="loader progress progress-striped active"><span class="bar"></span></span>
 	<span class='input-append pull-right searchContainer'>
 		<input id='filter' type="text" placeholder="Search..." />
@@ -34,9 +34,9 @@
 		<table class="collection table table-bordered table-hover">
 		<thead>
 			<tr>
-				<th id="header_IdSlider">Id Slider<% if (page.orderBy == 'IdSlider') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-				<th id="header_NombreProducto">Nombre Producto<% if (page.orderBy == 'NombreProducto') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-				<th id="header_DescSupProd">Desc Sup Prod<% if (page.orderBy == 'DescSupProd') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_IdSlider">Id<% if (page.orderBy == 'IdSlider') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_NombreProducto">Nombre<% if (page.orderBy == 'NombreProducto') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_DescSupProd">Descripción Superior<% if (page.orderBy == 'DescSupProd') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Orden">Orden<% if (page.orderBy == 'Orden') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Habilitado">Habilitado<% if (page.orderBy == 'Habilitado') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 <!-- UNCOMMENT TO SHOW ADDITIONAL COLUMNS
@@ -184,10 +184,10 @@
 				<div class="control-group">
 					<label class="control-label"></label>
 					<div class="controls">
-						<button id="deleteSliderButton" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i> Delete Slider</button>
+						<button id="deleteSliderButton" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i> Borrar</button>
 						<span id="confirmDeleteSliderContainer" class="hide">
-							<button id="cancelDeleteSliderButton" class="btn btn-mini">Cancel</button>
-							<button id="confirmDeleteSliderButton" class="btn btn-mini btn-danger">Confirm</button>
+							<button id="cancelDeleteSliderButton" class="btn btn-mini">Cancelar</button>
+							<button id="confirmDeleteSliderButton" class="btn btn-mini btn-danger">Confirmar</button>
 						</span>
 					</div>
 				</div>
@@ -200,7 +200,7 @@
 		<div class="modal-header">
 			<a class="close" data-dismiss="modal">&times;</a>
 			<h3>
-				<i class="icon-edit"></i> Edit Slider
+				<i class="icon-edit"></i> Editar Slide
 				<span id="modelLoader" class="loader progress progress-striped active"><span class="bar"></span></span>
 			</h3>
 		</div>
@@ -209,8 +209,8 @@
 			<div id="sliderModelContainer"></div>
 		</div>
 		<div class="modal-footer">
-			<button class="btn" data-dismiss="modal" >Cancel</button>
-			<button id="saveSliderButton" class="btn btn-primary">Save Changes</button>
+			<button class="btn" data-dismiss="modal" >Cancelar</button>
+			<button id="saveSliderButton" class="btn btn-primary">Guardar</button>
 		</div>
 	</div>
 
@@ -220,7 +220,7 @@
 	</div>
 
 	<p id="newButtonContainer" class="buttonContainer">
-		<button id="newSliderButton" class="btn btn-primary">Add Slider</button>
+		<button id="newSliderButton" class="btn btn-primary">Agregar Slide</button>
 	</p>
 
 </div> <!-- /container -->

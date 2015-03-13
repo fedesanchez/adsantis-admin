@@ -58,6 +58,8 @@ class LineaMap implements IDaoMap, IDaoMap2
 			self::$FM["Descripcion"] = new FieldMap("Descripcion","linea","descripcion",false,FM_TYPE_TEXT,null,null,false);
 			self::$FM["Atributos"] = new FieldMap("Atributos","linea","atributos",false,FM_TYPE_TEXT,null,null,false);
 			self::$FM["Nombre"] = new FieldMap("Nombre","linea","nombre",false,FM_TYPE_VARCHAR,45,null,false);
+			self::$FM["Novedad"] = new FieldMap("Novedad","linea","novedad",false,FM_TYPE_TINYINT,4,null,false);
+			self::$FM["ColorFondo"] = new FieldMap("ColorFondo","linea","color_fondo",false,FM_TYPE_VARCHAR,45,null,false);
 		}
 		return self::$FM;
 	}

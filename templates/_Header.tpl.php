@@ -4,9 +4,9 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-Frame-Options" content="deny">
 		<base href="<?php $this->eprint($this->ROOT_URL); ?>" />
-		<title><?php $this->eprint($this->title); ?></title>
+		<title>OLIO -> By Anna De Sanctis</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="Anna De Santis" />
+		<meta name="description" content="Anna De Sanctis" />
 		<meta name="author" content="phreeze builder | phreeze.com" />
 
 		<!-- Le styles -->
@@ -72,7 +72,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</a>
-						<a class="brand" href="./">Anna De Santis</a>
+						<a class="brand" href="./">Anna De Sanctis</a>
 						<div class="nav-collapse collapse">
 							
 							

@@ -1,5 +1,5 @@
 <?php
-	$this->assign('title','SANTIS | Lineas');
+	$this->assign('title','SANCTIS | Lineas');
 	$this->assign('nav','lineas');
 
 	$this->display('_Header.tpl.php');
@@ -112,9 +112,15 @@
 		                    <!-- The container for the uploaded files -->
 		                    <div id="files" class="files"></div>
                     		<br>
-                		</div>
-						
-
+                		</div>					
+					</div>
+				</div>
+				
+				<div id="colorFondoInputContainer" class="control-group">
+					<label class="control-label" for="colorFondo">Color</label>
+					<div class="controls inline-inputs">
+						<input type="text" class="input-xlarge" id="colorFondo" placeholder="Color de fondo" value="<%= _.escape(item.get('colorFondo') || '') %>">
+						<span class="help-inline"></span>
 					</div>
 				</div>
 				<div id="resumenInputContainer" class="control-group">
@@ -131,13 +137,21 @@
 						<span class="help-inline"></span>
 					</div>
 				</div>
-			<div id="atributosInputContainer" class="control-group">
+				<div id="atributosInputContainer" class="control-group">
 					<label class="control-label" for="atributos">Atributos</label>
 					<div class="controls inline-inputs">
 						<textarea class="tags input-xlarge" id="atributos" rows="3"><%= _.escape(item.get('atributos') || '') %></textarea>
 						<span class="help-inline"></span>
 					</div>
 				</div>
+
+				<div id="novedadInputContainer" class="control-group">
+					<label class="control-label" for="novedad">Novedad</label>
+					<div class="controls inline-inputs">
+						<input type="checkbox" class="input-xlarge" id="novedad" placeholder="Es Novedad?" value="1" <% if (item.get('novedad') == '1') { %>checked="checked"<% } %>>
+						<span class="help-inline"></span>
+					</div>
+				</div>				
 
 				
 			</fieldset>

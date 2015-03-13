@@ -17,7 +17,7 @@ require_once("verysimple/HTTP/RequestUtil.php");
 /** database connection settings */
 GlobalConfig::$CONNECTION_SETTING = new ConnectionSetting();
 GlobalConfig::$CONNECTION_SETTING->ConnectionString = "localhost:3306";
-GlobalConfig::$CONNECTION_SETTING->DBName = "santis";
+GlobalConfig::$CONNECTION_SETTING->DBName = "annadsar_web";
 GlobalConfig::$CONNECTION_SETTING->Username = "root";
 GlobalConfig::$CONNECTION_SETTING->Password = "Xx420944";
 GlobalConfig::$CONNECTION_SETTING->Type = "MySQL";
