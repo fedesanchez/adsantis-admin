@@ -35,15 +35,13 @@
 		<thead>
 			<tr>
 				<th id="header_IdConsejo">Id Consejo<% if (page.orderBy == 'IdConsejo') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-				<th id="header_Html">Html<% if (page.orderBy == 'Html') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Titulo">Titulo<% if (page.orderBy == 'Titulo') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 			</tr>
 		</thead>
 		<tbody>
 		<% items.each(function(item) { %>
 			<tr id="<%= _.escape(item.get('idConsejo')) %>">
-				<td><%= _.escape(item.get('idConsejo') || '') %></td>
-				<td><%= _.escape(item.get('html') || '') %></td>
+				<td><%= _.escape(item.get('idConsejo') || '') %></td>				
 				<td><%= _.escape(item.get('titulo') || '') %></td>
 			</tr>
 		<% }); %>
@@ -64,13 +62,7 @@
 						<span class="help-inline"></span>
 					</div>
 				</div>
-				<div id="htmlInputContainer" class="control-group">
-					<label class="control-label" for="html">Html</label>
-					<div class="controls inline-inputs">
-						<textarea class="input-xlarge" id="html" rows="3"><%= _.escape(item.get('html') || '') %></textarea>
-						<span class="help-inline"></span>
-					</div>
-				</div>
+				
 				<div id="tituloInputContainer" class="control-group">
 					<label class="control-label" for="titulo">Titulo</label>
 					<div class="controls inline-inputs">
@@ -78,6 +70,15 @@
 						<span class="help-inline"></span>
 					</div>
 				</div>
+
+				<div id="htmlInputContainer" class="control-group">
+					<label class="control-label" for="html">Html</label>
+					<div class="controls inline-inputs">
+						<textarea class="input-xlarge" id="html" rows="3"><%= _.escape(item.get('html') || '') %></textarea>
+						<span class="help-inline"></span>
+					</div>
+				</div>
+
 			</fieldset>
 		</form>
 
@@ -89,8 +90,8 @@
 					<div class="controls">
 						<button id="deleteConsejoButton" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i> Delete Consejo</button>
 						<span id="confirmDeleteConsejoContainer" class="hide">
-							<button id="cancelDeleteConsejoButton" class="btn btn-mini">Cancel</button>
-							<button id="confirmDeleteConsejoButton" class="btn btn-mini btn-danger">Confirm</button>
+							<button id="cancelDeleteConsejoButton" class="btn btn-mini">Cancelar</button>
+							<button id="confirmDeleteConsejoButton" class="btn btn-mini btn-danger">Confirmar</button>
 						</span>
 					</div>
 				</div>
@@ -103,7 +104,7 @@
 		<div class="modal-header">
 			<a class="close" data-dismiss="modal">&times;</a>
 			<h3>
-				<i class="icon-edit"></i> Edit Consejo
+				<i class="icon-edit"></i> Editar Consejo
 				<span id="modelLoader" class="loader progress progress-striped active"><span class="bar"></span></span>
 			</h3>
 		</div>
@@ -112,8 +113,8 @@
 			<div id="consejoModelContainer"></div>
 		</div>
 		<div class="modal-footer">
-			<button class="btn" data-dismiss="modal" >Cancel</button>
-			<button id="saveConsejoButton" class="btn btn-primary">Save Changes</button>
+			<button class="btn" data-dismiss="modal" >Cancelar</button>
+			<button id="saveConsejoButton" class="btn btn-primary">Guardar</button>
 		</div>
 	</div>
 
@@ -123,7 +124,7 @@
 	</div>
 
 	<p id="newButtonContainer" class="buttonContainer">
-		<button id="newConsejoButton" class="btn btn-primary">Add Consejo</button>
+		<button id="newConsejoButton" class="btn btn-primary">Agregar Consejo</button>
 	</p>
 
 </div> <!-- /container -->

@@ -21,7 +21,7 @@
 <div class="container">
 
 <h1>
-	<i class="icon-th-list"></i> Categorias
+	<i class="icon-th-list"></i> Categorías
 	<span id=loader class="loader progress progress-striped active"><span class="bar"></span></span>
 	<span class='input-append pull-right searchContainer'>
 		<input id='filter' type="text" placeholder="Search..." />
@@ -80,8 +80,8 @@
 					<div class="controls">
 						<button id="deleteCategoriaButton" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i> Delete Categoria</button>
 						<span id="confirmDeleteCategoriaContainer" class="hide">
-							<button id="cancelDeleteCategoriaButton" class="btn btn-mini">Cancel</button>
-							<button id="confirmDeleteCategoriaButton" class="btn btn-mini btn-danger">Confirm</button>
+							<button id="cancelDeleteCategoriaButton" class="btn btn-mini">Cancelar</button>
+							<button id="confirmDeleteCategoriaButton" class="btn btn-mini btn-danger">Confirmar</button>
 						</span>
 					</div>
 				</div>
@@ -94,7 +94,7 @@
 		<div class="modal-header">
 			<a class="close" data-dismiss="modal">&times;</a>
 			<h3>
-				<i class="icon-edit"></i> Edit Categoria
+				<i class="icon-edit"></i> Editar Categoría
 				<span id="modelLoader" class="loader progress progress-striped active"><span class="bar"></span></span>
 			</h3>
 		</div>
@@ -103,8 +103,8 @@
 			<div id="categoriaModelContainer"></div>
 		</div>
 		<div class="modal-footer">
-			<button class="btn" data-dismiss="modal" >Cancel</button>
-			<button id="saveCategoriaButton" class="btn btn-primary">Save Changes</button>
+			<button class="btn" data-dismiss="modal" >Cancelar</button>
+			<button id="saveCategoriaButton" class="btn btn-primary">Guardar</button>
 		</div>
 	</div>
 
@@ -114,7 +114,7 @@
 	</div>
 
 	<p id="newButtonContainer" class="buttonContainer">
-		<button id="newCategoriaButton" class="btn btn-primary">Add Categoria</button>
+		<button id="newCategoriaButton" class="btn btn-primary">Agregar Categoría</button>
 	</p>
 
 </div> <!-- /container -->
