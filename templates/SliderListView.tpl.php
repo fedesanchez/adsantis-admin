@@ -36,7 +36,7 @@
 			<tr>
 				<th id="header_IdSlider">Id<% if (page.orderBy == 'IdSlider') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_NombreProducto">Nombre<% if (page.orderBy == 'NombreProducto') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
-				<th id="header_DescSupProd">Descripción Superior<% if (page.orderBy == 'DescSupProd') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_DescSupProd">Descripción<% if (page.orderBy == 'DescSupProd') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Orden">Orden<% if (page.orderBy == 'Orden') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Habilitado">Habilitado<% if (page.orderBy == 'Habilitado') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 <!-- UNCOMMENT TO SHOW ADDITIONAL COLUMNS
@@ -55,7 +55,7 @@
 				<td><%= _.escape(item.get('nombreProducto') || '') %></td>
 				<td><%= _.escape(item.get('descSupProd') || '') %></td>
 				<td><%= _.escape(item.get('orden') || '') %></td>
-				<td><%= _.escape(item.get('habilitado') || '') %></td>
+				<td><%= _.escape((item.get('habilitado')==1)?'Si':'No' || '') %></td>
 <!-- UNCOMMENT TO SHOW ADDITIONAL COLUMNS
 				<td><%= _.escape(item.get('imgFondo') || '') %></td>
 				<td><%= _.escape(item.get('imgProducto') || '') %></td>
@@ -141,14 +141,14 @@
 				</div>
 				
 				<div id="descSupProdInputContainer" class="control-group">
-					<label class="control-label" for="descSupProd">Descripción Superior</label>
+					<label class="control-label" for="descSupProd">Descripción</label>
 					<div class="controls inline-inputs">
 						<input type="text" class="input-xlarge" id="descSupProd" placeholder="Descripción ..." value="<%= _.escape(item.get('descSupProd') || '') %>">
 						<span class="help-inline"></span>
 					</div>
 				</div>
 				<div id="descInfProdInputContainer" class="control-group">
-					<label class="control-label" for="descInfProd">Descripcion Inferior</label>
+					<label class="control-label" for="descInfProd">Descripción secundaria</label>
 					<div class="controls inline-inputs">
 						<input type="text" class="input-xlarge" id="descInfProd" placeholder="Descripción ..." value="<%= _.escape(item.get('descInfProd') || '') %>">
 						<span class="help-inline"></span>

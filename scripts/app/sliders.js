@@ -280,7 +280,7 @@ var page = {
 			wait: true,
 			success: function(){
 				$('#sliderDetailDialog').modal('hide');
-				setTimeout("app.appendAlert('Slider was sucessfully " + (isNew ? "inserted" : "updated") + "','alert-success',3000,'collectionAlert')",500);
+				setTimeout("app.appendAlert('El Slide fue exitosamente " + (isNew ? "creado" : "actualizado") + "','alert-success',3000,'collectionAlert')",500);
 				app.hideProgress('modelLoader');
 
 				// if the collection was initally new then we need to add it to the collection now
@@ -327,7 +327,7 @@ var page = {
 			wait: true,
 			success: function(){
 				$('#sliderDetailDialog').modal('hide');
-				setTimeout("app.appendAlert('The Slider record was deleted','alert-success',3000,'collectionAlert')",500);
+				setTimeout("app.appendAlert('El registro fue borrado','alert-success',3000,'collectionAlert')",500);
 				app.hideProgress('modelLoader');
 
 				if (model.reloadCollectionOnModelUpdate) {
