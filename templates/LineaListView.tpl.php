@@ -40,10 +40,13 @@
 				<th id="header_IdLinea">Id<% if (page.orderBy == 'IdLinea') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Nombre">Nombre<% if (page.orderBy == 'Nombre') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_IdCategoria">Categoría<% if (page.orderBy == 'IdCategoria') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<th id="header_Nombre">Novedad<% if (page.orderBy == 'Novedad') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				<!--
 				<th id="header_Img">Imagen<% if (page.orderBy == 'Img') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Resumen">Resumen<% if (page.orderBy == 'Resumen') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Descripcion">Descripción<% if (page.orderBy == 'Descripcion') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
 				<th id="header_Atributos">Atributos<% if (page.orderBy == 'Atributos') { %> <i class='icon-arrow-<%= page.orderDesc ? 'up' : 'down' %>' /><% } %></th>
+				-->				
 			</tr>
 		</thead>
 		<tbody>
@@ -52,10 +55,13 @@
 				<td><%= _.escape(item.get('idLinea') || '') %></td>
 			    <td><%= _.escape(item.get('nombre') || '') %></td>			
 				<td><%= _.escape(item.get('idCategoria') || '') %></td>
-				<td><%= _.escape(item.get('img') || '') %></td>
-				<td><%= _.escape(item.get('resumen') || '') %></td>
-				<td><%= _.escape(item.get('descripcion') || '') %></td>
-				<td><%= _.escape(item.get('atributos') || '') %></td>
+				<td><%= _.escape((item.get('novedad')==1)?'Si':'No' || '') %></td>
+				<!--
+				 <td><%= _.escape(item.get('img') || '') %></td>
+				 <td><%= _.escape(item.get('resumen') || '') %></td>
+				 <td><%= _.escape(item.get('descripcion') || '') %></td>
+				 <td><%= _.escape(item.get('atributos') || '') %></td>
+				--> 
 			</tr>
 		<% }); %>
 		</tbody>
