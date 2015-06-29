@@ -1,5 +1,5 @@
 <?php
-	$this->assign('title','Anna De Santis Secure Example');
+	$this->assign('title','Anna De Sanctis');
 	$this->assign('nav','inicio');
 
 	$this->display('_Header.tpl.php');

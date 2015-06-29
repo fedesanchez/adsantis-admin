@@ -100,10 +100,6 @@
 
 			 <div class="span3" id="sidebar">
                     <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
-                        <li  <?php if ($this->nav=='inicio') { echo 'class="active"'; } ?>>
-                        <a href="./"><i class="icon-chevron-right"></i> Inicio</a>
-                    </li>
-                   
                     <li  <?php if ($this->nav=='categorias') { echo 'class="active"'; } ?>>
                         <a href="./categorias"><i class="icon-chevron-right"></i>Categorias</a>
                     </li>
@@ -129,7 +125,11 @@
                     </li>
                     <li  <?php if ($this->nav=='salones') { echo 'class="active"'; } ?>>
                         <a href="./salones"><i class="icon-chevron-right"></i> Salones</a>
+                    </li>                  
+                    <li  <?php if ($this->nav=='estadisticas') { echo 'class="active"'; } ?>>
+                        <a href="./estadisticas"><i class="icon-chevron-right"></i> Estadisticas</a>
                     </li>
+                   
                     </ul>
                 </div>
 			

@@ -83,6 +83,8 @@ GlobalConfig::$ROUTE_MAP = array(
 
 	//estadisticas
 	'GET:estadisticas' => array('route' => 'Default.Estadisticas'),
+	'GET:iframe' => array('route' => 'Default.iframeEstadisticas'),
+	'GET:usage/(:any)' => array('route' => 'Default.usage', 'params' => array('img' => 1 )),
 
 	// Categoria
 	'GET:categorias' => array('route' => 'Categoria.ListView'),

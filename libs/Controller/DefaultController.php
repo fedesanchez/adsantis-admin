@@ -35,7 +35,7 @@ class DefaultController extends AppBaseController
 		if($this->GetCurrentUser())
 		{						
 			$this->Assign("currentUser", $this->GetCurrentUser());
-			$this->Render('Home');
+			$this->Render('LineaListView');
 		}else{			
 			$this->Render('Login');	
 		}
@@ -67,6 +67,41 @@ class DefaultController extends AppBaseController
 	public function Estadisticas(){
 		$this->Assign("currentUser", $this->GetCurrentUser());
 		$this->Render('Estadisticas');
+	}
+
+	public function iframeEstadisticas(){
+		if($this->GetCurrentUser()){
+			$path = '../../stats/';
+			$stats = array_diff(scandir($path), array('..', '.'));			
+			$index=file_get_contents($path."index.html");
+			$index=str_replace("usage.png", "./usage/usage.png", $index);
+			
+			foreach ($stats as $key) {
+				if(strpos($key, ".html")){
+					$index=str_replace($key, "#", $index);
+				}
+			}
+			echo $index;
+			
+		}else{
+			echo "no tiene permisos para ver esta informacion";
+		}
+	}
+
+	public function usage(){
+		if($this->GetCurrentUser() && $this->GetRouter()->GetUrlParam('img')){	
+			$strImg=$this->GetRouter()->GetUrlParam('img');
+			$path = '../../stats/';
+			$name = $path.$strImg;
+			$fp = fopen($name, 'rb');
+
+			// send the right headers
+			header("Content-Type: image/png");
+			header("Content-Length: " . filesize($name));
+
+			// dump the picture and stop the script
+			fpassthru($fp);
+		}
 	}
 
 }
