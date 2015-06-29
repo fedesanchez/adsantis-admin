@@ -1,9 +1,10 @@
 <?php
-	$this->assign('title','Anna De Santis | Consejos');
+	$this->assign('title','Anna De Sanctis | Consejos');
 	$this->assign('nav','consejos');
 
 	$this->display('_Header.tpl.php');
 ?>
+
 
 <script type="text/javascript">
 	$LAB.script("scripts/app/consejos.js").wait(function(){
@@ -74,7 +75,7 @@
 				<div id="htmlInputContainer" class="control-group">
 					<label class="control-label" for="html">Html</label>
 					<div class="controls inline-inputs">
-						<textarea class="input-xlarge" id="html" rows="3"><%= _.escape(item.get('html') || '') %></textarea>
+						<textarea style="width: 90%; height: 200px" class="textarea" id="html" rows="3" ><%= _.escape(item.get('html') || '') %></textarea>
 						<span class="help-inline"></span>
 					</div>
 				</div>
@@ -88,7 +89,7 @@
 				<div class="control-group">
 					<label class="control-label"></label>
 					<div class="controls">
-						<button id="deleteConsejoButton" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i> Delete Consejo</button>
+						<button id="deleteConsejoButton" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i> Borrar Consejo</button>
 						<span id="confirmDeleteConsejoContainer" class="hide">
 							<button id="cancelDeleteConsejoButton" class="btn btn-mini">Cancelar</button>
 							<button id="confirmDeleteConsejoButton" class="btn btn-mini btn-danger">Confirmar</button>
@@ -126,6 +127,7 @@
 	<p id="newButtonContainer" class="buttonContainer">
 		<button id="newConsejoButton" class="btn btn-primary">Agregar Consejo</button>
 	</p>
+
 
 </div> <!-- /container -->
 

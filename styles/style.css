@@ -96,3 +96,9 @@ span.help-inline {
 span.help-inline:empty {
 	display: none;
 }
+
+
+#consejoDetailDialog{
+	/*margin: -261px 0 0 -382px !important;*/
+	width: 65% !important;
+}

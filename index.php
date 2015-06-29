@@ -1,6 +1,7 @@
 <?php
 /** @package    Anna De Santis */
-
+$path=realpath(dirname($_SERVER['DOCUMENT_ROOT'])).'/php_sessions';
+ini_set('session.save_path',$path);
 /* GlobalConfig object contains all configuration information for the app */
 include_once("_global_config.php");
 include_once("_app_config.php");

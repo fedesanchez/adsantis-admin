@@ -33,6 +33,7 @@ gapi.analytics.ready(function() {
    * If no access has been created, render an authorize button inside the
    * element with the ID "embed-api-auth-container".
    */
+  var clave_publica="AIzaSyB4lOnlYceCR4p0B9phN9uh83i5tTt32Xo"; 
   gapi.analytics.auth.authorize({
     container: 'embed-api-auth-container',
     clientid: '1010178529516-fh81qe26od8ktjjmlh35pstlmvu9fetk.apps.googleusercontent.com',

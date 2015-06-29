@@ -25,9 +25,9 @@
 	Options +FollowSymLinks
 	Options -MultiViews
 	RewriteEngine On
-	
+#	AllowOverride All
 	## TODO: some hosts require the app root must be specified
-	# RewriteBase /
+	# RewriteBase /admin/
 
 	# Optionally disable trace request method for security
 	# RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)

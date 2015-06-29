@@ -103,9 +103,6 @@
                         <li  <?php if ($this->nav=='inicio') { echo 'class="active"'; } ?>>
                         <a href="./"><i class="icon-chevron-right"></i> Inicio</a>
                     </li>
-                    <li  <?php if ($this->nav=='estadisticas') { echo 'class="active"'; } ?>>
-                        <a href="./estadisticas"><i class="icon-chevron-right"></i> Estadisticas</a>
-                    </li>
                    
                     <li  <?php if ($this->nav=='categorias') { echo 'class="active"'; } ?>>
                         <a href="./categorias"><i class="icon-chevron-right"></i>Categorias</a>
