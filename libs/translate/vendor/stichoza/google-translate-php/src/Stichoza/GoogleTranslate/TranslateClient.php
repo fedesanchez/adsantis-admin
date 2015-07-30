@@ -1,14 +1,14 @@
 <?php
 namespace Stichoza\GoogleTranslate;
 
-use Exception;
-use ErrorException;
-use BadMethodCallException;
-use InvalidArgumentException;
-use UnexpectedValueException;
-use GuzzleHttp\Client as GuzzleHttpClient;
-use GuzzleHttp\Exception\RequestException as GuzzleRequestException;
-
+//use Exception;
+//use ErrorException;
+//use BadMethodCallException;
+//use InvalidArgumentException;
+//use UnexpectedValueException;
+//use GuzzleHttp\Client as GuzzleHttpClient;
+//use GuzzleHttp\Exception\RequestException as GuzzleRequestException;
+//require('Snoopy.php');
 /**
  * Free Google Translate API PHP Package
  *
@@ -51,7 +51,7 @@ class TranslateClient
     /**
      * @var array URL Parameters
      */
-    private $urlParams = [
+    private $urlParams = array(
         'client'   => 't',
         'hl'       => 'en',
         'sl'       => null, // Source language
@@ -66,15 +66,15 @@ class TranslateClient
         'ssel'     => 0,
         'tsel'     => 0,
         'sc'       => 1,
-    ];
+    );
 
     /**
      * @var array Regex key-value patterns to replace on response data
      */
-    private $resultRegexes = [
+    private $resultRegexes = array(
         '/,+/'  => ',',
         '/\[,/' => '[',
-    ];
+    );
 
     /**
      * Class constructor
@@ -87,9 +87,10 @@ class TranslateClient
      * @param string $target Target language (Optional)
      * @param array $options Associative array of http client configuration options (Optional)
      */
-    public function __construct($source = null, $target = 'en', $options = [])
+    public function __construct($source = null, $target = 'en', $options = array())
     {
-        $this->httpClient = new GuzzleHttpClient($options); // Create HTTP client
+        //$this->httpClient = new GuzzleHttpClient($options); // Create HTTP client
+        $this->httpClient=new Snoopy;
         $this->setSource($source)->setTarget($target); // Set languages
         $this::$lastDetectedSource = false;
     }
@@ -203,19 +204,22 @@ class TranslateClient
             throw new InvalidArgumentException("Invalid string provided");
         }
 
-        $queryArray = array_merge($this->urlParams, [
+        $queryArray = array_merge($this->urlParams, array(
             'text' => $string,
             'sl'   => $this->sourceLanguage,
             'tl'   => $this->targetLanguage,
-        ]);
+        ));
 
         try {
-            $response = $this->httpClient->post($this->urlBase, ['body' => $queryArray]);
-        } catch (GuzzleRequestException $e) {
+            //$response = $this->httpClient->post($this->urlBase, array('body' => $queryArray));
+              $response = $this->httpClient->submit($this->urlBase, $queryArray);
+        } catch (Exception $e) {
             throw new ErrorException($e->getMessage());
         }
 
-        $body = $response->getBody(); // Get response body
+        //$body = $response->getBody(); // Get response body
+        $body = $response->results;
+        
 
         // Modify body to avoid json errors
         $bodyJson = preg_replace(array_keys($this->resultRegexes), array_values($this->resultRegexes), $body);
@@ -255,7 +259,7 @@ class TranslateClient
         }
 
         // Detect languages
-        $detectedLanguages = [];
+        $detectedLanguages = array();
 
         // Add detected languages
         foreach ($responseArray as $item) {

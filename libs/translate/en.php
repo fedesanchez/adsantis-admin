@@ -40,11 +40,6 @@ return array (
     'original' => 'algun titulo',
     'traduccion' => 'some title',
   ),
-  8 => 
-  array (
-    'original' => 'a ver si te traducís esto google ! gato!',
-    'traduccion' => 'traducís see if you google it ! Cat!',
-  ),
   9 => 
   array (
     'original' => ' pensado para despues de cada coloracion',
@@ -54,11 +49,6 @@ return array (
   array (
     'original' => 'para clientas con poco tiempo, olio creo 2 tipos de ampollas, chocolato y keratina, que son baños de crema express. Te los aplicas y no neceistas tiempo de exposicion',
     'traduccion' => 'for customers with little time , I think olio 2 types of blisters, chocolato and keratin , which is cream express baths . Will you apply them and not neceistas exposure time',
-  ),
-  11 => 
-  array (
-    'original' => 'viva peron!',
-    'traduccion' => 'peron alive !',
   ),
   12 => 
   array (
@@ -712,5 +702,15 @@ The combination of provitamin B5 keratin and closes the cuticle , reduces frizz 
   array (
     'original' => 'Modelo',
     'traduccion' => 'model',
+  ),
+  142 => 
+  array (
+    'original' => 'ahh',
+    'traduccion' => 'ahh',
+  ),
+  143 => 
+  array (
+    'original' => 'anda o no anda',
+    'traduccion' => 'walk or not walk',
   ),
 );
