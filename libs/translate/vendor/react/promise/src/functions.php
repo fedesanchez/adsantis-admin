@@ -112,12 +112,12 @@ function map($promisesOrValues, callable $mapFunc)
     return resolve($promisesOrValues)
         ->then(function ($array) use ($mapFunc) {
             if (!is_array($array) || !$array) {
-                return resolve([]);
+                return resolve(array());
             }
 
             return new Promise(function ($resolve, $reject, $notify) use ($array, $mapFunc) {
                 $toResolve = count($array);
-                $values    = [];
+                $values    = array();
 
                 foreach ($array as $i => $promiseOrValue) {
                     resolve($promiseOrValue)
@@ -143,7 +143,7 @@ function reduce($promisesOrValues, callable $reduceFunc, $initialValue = null)
     return resolve($promisesOrValues)
         ->then(function ($array) use ($reduceFunc, $initialValue) {
             if (!is_array($array)) {
-                $array = [];
+                $array = array();
             }
 
             $total = count($array);
