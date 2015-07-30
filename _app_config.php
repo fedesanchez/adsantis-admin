@@ -167,6 +167,10 @@ GlobalConfig::$ROUTE_MAP = array(
 	'PUT:api/salon/(:num)' => array('route' => 'Salon.Update', 'params' => array('idSalon' => 2)),
 	'DELETE:api/salon/(:num)' => array('route' => 'Salon.Delete', 'params' => array('idSalon' => 2)),
 
+	// TRADUCCION A INGLES
+	'GET:ingles' => array('route'=>'Ingles.ListView'),
+	'GET:traducir' => array('route'=>'Ingles.Traducir'),
+	'POST:traduccionmanual' => array('route' => 'Ingles.guardarTraducciones'),
 
 	// catch any broken API urls
 	'GET:api/(:any)' => array('route' => 'Default.ErrorApi404'),

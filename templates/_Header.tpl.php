@@ -110,7 +110,7 @@
                     <li <?php if ($this->nav=='sliders') { echo 'class="active"'; } ?>>
                         <a href="./sliders"><i class="icon-chevron-right"></i> Slider Principal</a>
                     </li>
-                    <li  <?php if ($this->nav=='slidersta') { echo 'class="active"'; } ?>>
+                    <li  <?php if ($this->nav=='slidertas') { echo 'class="active"'; } ?>>
                         <a href="./slidertas"><i class="icon-chevron-right"></i> Triple Accion</a>
                     </li>
                     
@@ -129,7 +129,9 @@
                     <li  <?php if ($this->nav=='estadisticas') { echo 'class="active"'; } ?>>
                         <a href="./estadisticas"><i class="icon-chevron-right"></i> Estadisticas</a>
                     </li>
-                   
+					<li  <?php if ($this->nav=='ingles') { echo 'class="active"'; } ?>>
+                        <a href="./ingles"><i class="icon-chevron-right"></i> Ingles</a>
+                    </li>                   
                     </ul>
                 </div>
 			
