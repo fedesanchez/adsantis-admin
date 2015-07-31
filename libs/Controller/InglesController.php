@@ -120,14 +120,17 @@ class InglesController extends AppBaseController
 		try
 		{
 			
-			$contenido=$_POST;//RequestUtil::GetBody();
-
+			$contenido=$_POST['texto'];//RequestUtil::GetBody();
+			
 			if (!$contenido)
 			{
 				throw new Exception('El contenido no es valido, no se guardaran los cambios');
 			}
 			$file='libs/translate/en.php';
-			if(file_put_contents($file,$contenido)){
+			$fp = fopen($file, 'w');
+			//if(file_put_contents($file,"<?php\nreturn ".var_export($contenido,true).";")){
+			if(fwrite($fp, $contenido)){
+				fclose($fp);
 				$this->RenderJSON(array('success'=>'true'));
 			}else{
 				$this->RenderJSON(array('success'=>'false','msg'=>'No se pudo guardar el contenido. Revisar permisos del archivo'));

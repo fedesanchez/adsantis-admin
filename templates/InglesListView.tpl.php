@@ -20,7 +20,7 @@
 		$("#guardar_cambios").click(function(){
 			$.ajax({
 				type:"POST",
-				data:$("#array_traducciones").val(),
+				data:{texto: $("#array_traducciones").val() },
 				url:'./traduccionmanual',
 				success:function(data){
 					if(!data.success){
